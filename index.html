@@ -35,6 +35,13 @@ h2 { margin-top: 40px; }
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -54,9 +61,8 @@ h2 { margin-top: 40px; }
   padding: 15px 30px;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 10px;
+.top-logo {
+  max-width: 300px;
   margin-top: 20px;
 }
 
@@ -92,13 +98,9 @@ img {
 
 <!-- TOPO -->
 <div class="container">
+  <img src="ProtoNest.png" class="top-logo">
   <h1>Protonest Automação</h1>
   <p>Automação inteligente e eficiente</p>
-</div>
-
-<!-- IMAGEM -->
-<div class="container">
-  <img src="https://via.placeholder.com/600x300" alt="Imagem Protonest">
 </div>
 
 <!-- SOBRE -->
@@ -126,18 +128,21 @@ img {
   <div class="card-container">
 
     <div class="card">
+      <img src="projetos.png">
       <h3>Projetos</h3>
       <p>Desenvolvimento de soluções personalizadas.</p>
       <div class="btn" onclick="openModal('projetos')">Saiba mais</div>
     </div>
 
     <div class="card">
+      <img src="servicos.png">
       <h3>Serviços</h3>
       <p>Instalação e suporte técnico especializado.</p>
       <div class="btn" onclick="openModal('servicos')">Saiba mais</div>
     </div>
 
     <div class="card">
+      <img src="teste.png">
       <h3>Produtos</h3>
       <p>Soluções sob medida para indústria e agro.</p>
       <div class="btn" onclick="openModal('produtos')">Saiba mais</div>
