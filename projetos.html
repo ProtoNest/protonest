@@ -116,9 +116,26 @@ h1 {
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:40px;
-  color:white;
+  font-size:42px;
   cursor:pointer;
+  padding:12px;
+
+  color: white;
+
+  /* CONTRASTE AUTOMÁTICO */
+  mix-blend-mode: difference;
+
+  /* GARANTE VISIBILIDADE */
+  text-shadow: 
+    0 0 5px rgba(0,0,0,0.8),
+    0 0 10px rgba(0,0,0,0.6);
+
+  /* área clicável maior */
+  background: transparent;
+  border-radius:50%;
+}
+  .seta:active {
+  transform:translateY(-50%) scale(0.9);
 }
 
 .esquerda { left:20px; }
