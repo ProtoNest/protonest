@@ -4,46 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ProtoNest Automação</title>
- 
 
 <style>
 
-/* TOPO LIMPO */
+/* TOPO */
 .titulo {
   font-size: 2.8em;
   font-weight: bold;
-  letter-spacing: 1px;
   margin-bottom: 5px;
 }
+.azul { color: #4ea8de; }
+.verde { color: #2ea043; }
 
-.azul {
-  color: #4ea8de;
-}
-
-.verde {
-  color: #2ea043;
-}
-
-/* SOBRE */
-.sobre-texto {
-  max-width: 500px;
-}
-
-.sobre-texto h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-.sobre-texto p {
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.sobre-texto .btn {
-  margin-top: 10px;
-}
-
-/* BASE */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -51,25 +23,19 @@ body {
   color: #c9d1d9;
 }
 
-/* GERAL */
 .container {
   padding: 40px 20px;
   text-align: center;
 }
 
-h2 { margin-top: 40px; }
-
-/* SLOGAN */
 .slogan {
-  font-size: 1.2em;
   color: #8b949e;
 }
 
-/* SOBRE (DIVIDIDO) */
+/* SOBRE */
 .sobre {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   gap: 30px;
   text-align: left;
@@ -77,8 +43,15 @@ h2 { margin-top: 40px; }
 
 .sobre img {
   width: 350px;
-  max-width: 100%;
   border-radius: 10px;
+}
+
+.sobre-texto {
+  max-width: 500px;
+}
+
+.sobre-texto p {
+  margin-bottom: 12px;
 }
 
 /* CARDS */
@@ -87,7 +60,6 @@ h2 { margin-top: 40px; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 30px;
 }
 
 .card {
@@ -95,8 +67,6 @@ h2 { margin-top: 40px; }
   padding: 20px;
   border-radius: 10px;
   width: 260px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  text-align: center;
 }
 
 .card img {
@@ -115,46 +85,23 @@ h2 { margin-top: 40px; }
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .btn:hover {
   background: #2ea043;
 }
 
-/* CTA */
-.cta {
-  text-align: center;
-}
-
-.cta .btn {
-  font-size: 1.2em;
-  padding: 15px 30px;
-}
-
-/* MODAL */
-.modal {
-  display: none;
+/* WHATS FIXO */
+.whats-fixo {
   position: fixed;
-  z-index: 10;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-  background: #161b22;
-  margin: 10% auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 10px;
-}
-
-.close {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 </style>
@@ -162,42 +109,29 @@ h2 { margin-top: 40px; }
 
 <body>
 
-<!-- TOPO -->
 <div class="container">
   <h1 class="titulo">
-  <span class="azul">ProtoNest</span> <span class="verde">Automação</span>
-</h1>
+    <span class="azul">ProtoNest</span> <span class="verde">Automação</span>
+  </h1>
   <p class="slogan">Automação Inteligente e Eficiente</p>
 </div>
 
-<!-- SOBRE -->
 <div class="container">
   <div class="sobre">
-
     <img src="ProtoNest.png">
 
     <div class="sobre-texto">
       <h2>SOBRE A PROTONEST AUTOMAÇÃO</h2>
 
-      <p>
-      Desde 2017 transformamos desafios complexos em soluções eficientes para a indústria e o desenvolvimento de novos produtos.
-      </p>
+      <p>Desde 2017 transformamos desafios complexos em soluções eficientes para a indústria e o desenvolvimento de novos produtos.</p>
 
-      <p>
-      A ProtoNest é uma impulsionadora tecnológica que atua como o braço de engenharia para empresas que não possuem um time de P&D constituído.
-      Transformamos desafios complexos em soluções eficientes para a indústria e para o desenvolvimento de novos produtos,
-      tirando ideias do papel com agilidade e precisão.
-      </p>
+      <p>A ProtoNest atua como braço de engenharia para empresas sem P&D, transformando ideias em soluções com agilidade e precisão.</p>
 
-      <a class="btn" href="https://wa.me/5555996294266?text=Olá,%20vim%20pelo%20site">
-        Falar no WhatsApp
-      </a>
+      <a class="btn" href="https://wa.me/5555996294266">Falar no WhatsApp</a>
     </div>
-
   </div>
 </div>
 
-<!-- PARA SUA EMPRESA -->
 <div class="container">
   <h2>Para sua Empresa</h2>
   <p>Parceria técnica e soluções precisas que se encaixam na necessidade da sua empresa.</p>
@@ -208,100 +142,29 @@ h2 { margin-top: 40px; }
       <img src="projetos.jpg">
       <h3>Projetos</h3>
       <p>Desenvolvimento de soluções personalizadas.</p>
-      <div class="btn" onclick="openModal('projetos')">Saiba mais</div>
+      <a class="btn" href="projetos.html">Saiba mais</a>
     </div>
 
     <div class="card">
-      <img src="serviços.jpg">
+      <img src="servicos.jpg">
       <h3>Serviços</h3>
       <p>Instalação e suporte técnico especializado.</p>
-      <div class="btn" onclick="openModal('servicos')">Saiba mais</div>
+      <a class="btn" href="servicos.html">Saiba mais</a>
     </div>
 
     <div class="card">
       <img src="produtos1.png">
       <h3>Produtos</h3>
       <p>Soluções sob medida para indústria e agro.</p>
-      <div class="btn" onclick="openModal('produtos')">Saiba mais</div>
+      <a class="btn" href="produtos.html">Saiba mais</a>
     </div>
 
   </div>
 </div>
 
-<!-- CTA -->
-<div class="container cta">
-  <h2>Vamos conversar?</h2>
-  <a class="btn" href="https://wa.me/5555996294266?text=Olá,%20vim%20pelo%20site">
-    Fale comigo no WhatsApp
-  </a>
-</div>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div id="modalText"></div>
-
-    <a class="btn" href="https://wa.me/5555996294266?text=Olá,%20vim%20pelo%20site">
-      Falar no WhatsApp
-    </a>
-  </div>
-</div>
-
-<script>
-function openModal(tipo) {
-  let texto = "";
-
-  if (tipo === "projetos") {
-    texto = `
-    <h3>Projetos</h3>
-    <ul>
-      <li>Programação de CLP e IHM</li>
-      <li>Eletrônica Embarcada e MVP's</li>
-      <li>Design de PCB</li>
-      <li>Diagramas Elétricos</li>
-      <li>IoT (Internet das Coisas)</li>
-      <li>Aquisição de Dados</li>
-      <li>Dashboards Personalizados</li>
-    </ul>`;
-  }
-
-  if (tipo === "servicos") {
-    texto = `
-    <h3>Serviços</h3>
-    <ul>
-      <li>Montagem de Quadro de Comando</li>
-      <li>Instalação de Máquinas e Equipamentos</li>
-      <li>Manutenção Elétrica</li>
-      <li>Assistência Técnica Especializada</li>
-      <li>Manutenção de Elevadores</li>
-    </ul>`;
-  }
-
-  if (tipo === "produtos") {
-    texto = `
-    <h3>Produtos Sob Medida</h3>
-    <b>Indústria:</b>
-    <ul>
-      <li>Quadro de Comando para Poço Artesiano e Irrigação</li>
-      <li>Quadro de Proteção e Distribuição (DPS)</li>
-    </ul>
-
-    <b>Agro:</b>
-    <ul>
-      <li>Comando de Pulverização Elétrico por seção</li>
-      <li>Comando de Pulverização Automático</li>
-    </ul>`;
-  }
-
-  document.getElementById("modalText").innerHTML = texto;
-  document.getElementById("modal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-</script>
+<a class="whats-fixo" href="https://wa.me/5555996294266">
+  WhatsApp
+</a>
 
 </body>
 </html>
