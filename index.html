@@ -74,6 +74,7 @@ body {
   height: 140px;
   object-fit: cover;
   border-radius: 8px;
+  cursor: pointer; /* 👈 melhora UX no mobile */
 }
 
 /* BOTÕES */
@@ -165,6 +166,24 @@ body {
 <a class="whats-fixo" href="https://wa.me/5555996294266">
   WhatsApp
 </a>
+
+<!-- 🔥 SCRIPT MOBILE -->
+<script>
+if (window.innerWidth <= 768) {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const img = card.querySelector("img");
+    const link = card.querySelector(".btn");
+
+    if (img && link) {
+      img.addEventListener("click", () => {
+        window.location.href = link.href;
+      });
+    }
+  });
+}
+</script>
 
 </body>
 </html>
