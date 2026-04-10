@@ -114,6 +114,54 @@ h1 { text-align:center; }
   text-decoration:none;
   font-weight:bold;
 }
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+
+  .lista li {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .galeria img {
+    height: 220px; /* pode ajustar */
+  }
+
+  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>LEGENDA DO LIGHTBOX */
+  #legenda {
+    color: #e6edf3;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* BOTÃO WHATS DENTRO DA IMAGEM */
+  .whats-lightbox {
+    box-shadow: 0 0 10px rgba(37,211,102,0.5);
+    width: 80%;
+    text-align: center;
+    font-size: 16px;
+    padding: 14px 22px;
+  }
+
+  /* BOTÃO WHATS FIXO */
+  .whats-fixo {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+}
+
+  
 </style>
 </head>
 
@@ -175,15 +223,15 @@ h1 { text-align:center; }
 <script>
 let imagens = [
   {src:"img_prod1.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
-  {src:"img_prod2.jpg", legenda:"Comando elétrico pulverização"},
-  {src:"img_prod3.jpg", legenda:"Comando elétrico pulverização"},
+  {src:"img_prod2.jpg", legenda:"Comandos elétricos pulverização por seção"},
+  {src:"img_prod3.jpg", legenda:"Controles elétricos para barra por seção"},
   {src:"img_prod4.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
   {src:"img_prod5.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
   {src:"img_prod6.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
-  {src:"img_serv1.png", legenda:"Quadro de comando Irrigação"},
-  {src:"img_serv2.png", legenda:"Quadro de proteção Elétrica"},
-  {src:"img_serv3.jpg", legenda:"Quadro elétrico de comando Automatizado"},
-  {src:"img_serv4.jpg", legenda:"Quadro de comando poço Artesiano"}
+  {src:"img_serv1.png", legenda:"Quadros de comando para Irrigação"},
+  {src:"img_serv2.png", legenda:"Quadros de Proteção para instalações elétricas"},
+  {src:"img_serv3.jpg", legenda:"Quadros elétricos de comando Automatizados"},
+  {src:"img_serv4.jpg", legenda:"Quadros de comando dimensionados para poço Artesiano"}
 ];
 
 let indexAtual = 0;
