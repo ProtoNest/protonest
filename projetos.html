@@ -9,9 +9,10 @@ body { background:#0d1117; color:#c9d1d9; font-family:Arial; margin:0; }
 
 .container { max-width:1000px; margin:auto; padding:40px 20px; }
 
-h1 { text-align:center; font-size:42px; }
+h1 { text-align:center; font-size:36px; }
 .sub { text-align:center; color:#8b949e; margin-bottom:30px; font-size:18px; }
 
+/* BLOCO */
 .bloco {
   display:flex;
   flex-wrap:wrap;
@@ -25,7 +26,12 @@ h1 { text-align:center; font-size:42px; }
   border-radius:10px;
 }
 
-.lista { max-width:500px; font-size:18px; }
+.lista { max-width:500px; }
+
+.lista li {
+  font-size:18px;
+  margin-bottom:8px;
+}
 
 /* GALERIA */
 .galeria {
@@ -37,7 +43,7 @@ h1 { text-align:center; font-size:42px; }
 
 .galeria img {
   width: 100%;
-  height: 260px;
+  height: 250px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -54,6 +60,7 @@ h1 { text-align:center; font-size:42px; }
   border-radius:50px;
   text-decoration:none;
   font-size:16px;
+  font-weight:bold;
 }
 
 /* LIGHTBOX */
@@ -69,31 +76,30 @@ h1 { text-align:center; font-size:42px; }
   justify-content:center;
   align-items:center;
   flex-direction:column;
+  padding:20px;
 }
 
 .lightbox img {
-  max-width:90%;
+  max-width:95%;
   max-height:65%;
   border-radius:10px;
 }
 
 #legenda {
   margin-top:15px;
+  color:#e6edf3;
   font-size:20px;
   text-align:center;
-  padding:10px;
 }
 
-/* BOTÃO */
-.whats-lightbox {
-  margin-top:20px;
-  background:#25D366;
+/* FECHAR */
+.fechar {
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
   color:white;
-  padding:16px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:bold;
+  cursor:pointer;
 }
 
 /* SETAS */
@@ -104,26 +110,59 @@ h1 { text-align:center; font-size:42px; }
   font-size:45px;
   color:white;
   cursor:pointer;
+  padding:10px;
 }
 
-.esquerda { left:20px; }
-.direita { right:20px; }
+.esquerda { left:10px; }
+.direita { right:10px; }
 
-/* FECHAR */
-.fechar {
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:35px;
-  cursor:pointer;
+/* BOTÃO WHATS DENTRO */
+.whats-lightbox {
+  margin-top:20px;
+  background:#25D366;
+  color:white;
+  padding:16px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:18px;
+  box-shadow:0 0 15px rgba(37,211,102,0.6);
 }
 
-/* MOBILE */
-@media (max-width:600px){
-  h1 { font-size:32px; }
-  .sub { font-size:16px; }
-  #legenda { font-size:18px; }
-  .whats-lightbox { width:80%; font-size:16px; }
+/* MOBILE REAL AJUSTADO */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size:34px;
+  }
+
+  .sub {
+    font-size:18px;
+  }
+
+  .lista li {
+    font-size:18px;
+  }
+
+  .galeria img {
+    height:220px;
+  }
+
+  #legenda {
+    font-size:20px;
+  }
+
+  .whats-lightbox {
+    width:85%;
+    text-align:center;
+    font-size:18px;
+    padding:16px;
+  }
+
+  .whats-fixo {
+    font-size:16px;
+    padding:16px;
+  }
 }
 </style>
 </head>
@@ -139,6 +178,7 @@ h1 { text-align:center; font-size:42px; }
 
 <div class="bloco">
   <img src="projetos.jpg">
+
   <div class="lista">
     <ul>
       <li>Programação de CLP e IHM</li>
@@ -149,25 +189,36 @@ h1 { text-align:center; font-size:42px; }
   </div>
 </div>
 
+<!-- GALERIA -->
 <div class="galeria">
   <img src="img_proj1.jpg" onclick="abrirLightbox(0)">
   <img src="img_proj2.jpg" onclick="abrirLightbox(1)">
-  <img src="img_proj3.jpg" onclick="abrirLightbox(2)">
+  <img src="img_proj10.jpg" onclick="abrirLightbox(2)">
+  <img src="img_proj3.jpg" onclick="abrirLightbox(3)">
+  <img src="img_proj4.jpg" onclick="abrirLightbox(4)">
+  <img src="img_proj5.jpg" onclick="abrirLightbox(5)">
+  <img src="img_proj6.jpg" onclick="abrirLightbox(6)">
+  <img src="img_proj7.jpg" onclick="abrirLightbox(7)">
+  <img src="img_proj8.jpg" onclick="abrirLightbox(8)">
+  <img src="img_proj9.jpg" onclick="abrirLightbox(9)">
+  <img src="img_proj11.jpg" onclick="abrirLightbox(10)">
 </div>
 
 </div>
 
 <a class="whats-fixo" href="https://wa.me/5555996294266">WhatsApp</a>
 
+<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
   <span class="fechar" onclick="fecharLightbox()">&times;</span>
+
   <span class="seta esquerda" onclick="anterior()">❮</span>
   <span class="seta direita" onclick="proxima()">❯</span>
 
   <img id="imgLightbox">
   <p id="legenda"></p>
 
-  <a class="whats-lightbox" href="https://wa.me/5555996294266">
+  <a class="whats-lightbox" href="https://wa.me/5555996294266" target="_blank">
     Falar no WhatsApp
   </a>
 </div>
@@ -175,36 +226,69 @@ h1 { text-align:center; font-size:42px; }
 <script>
 let imagens = [
   {src:"img_proj1.jpg", legenda:"Projeto PCB"},
-  {src:"img_proj2.jpg", legenda:"Projeto IoT"},
-  {src:"img_proj3.jpg", legenda:"Automação Industrial"}
+  {src:"img_proj2.jpg", legenda:"Projeto PCB"},
+  {src:"img_proj10.jpg", legenda:"Design PCB"},
+  {src:"img_proj3.jpg", legenda:"Internet das Coisas - IOT"},
+  {src:"img_proj4.jpg", legenda:"Schematic PCB"},
+  {src:"img_proj5.jpg", legenda:"Programação Ladder, C, C++, Python"},
+  {src:"img_proj6.jpg", legenda:"Programação IHM"},
+  {src:"img_proj7.jpg", legenda:"Prototipação Protoboard"},
+  {src:"img_proj8.jpg", legenda:"MVP ThunderBird"},
+  {src:"img_proj9.jpg", legenda:"MVP Aquisição de dados"},
+  {src:"img_proj11.jpg", legenda:"Projetos Automação Industrial"}
 ];
 
 let indexAtual = 0;
 
-function abrirLightbox(i){
-  indexAtual=i;
-  atualizar();
-  document.getElementById("lightbox").style.display="flex";
+function abrirLightbox(index) {
+  indexAtual = index;
+  atualizarLightbox();
+  document.getElementById("lightbox").style.display = "flex";
 }
 
-function atualizar(){
-  imgLightbox.src=imagens[indexAtual].src;
-  legenda.innerText=imagens[indexAtual].legenda;
+function atualizarLightbox() {
+  document.getElementById("imgLightbox").src = imagens[indexAtual].src;
+  document.getElementById("legenda").innerText = imagens[indexAtual].legenda;
 }
 
-function fecharLightbox(){
-  lightbox.style.display="none";
+function fecharLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
 
-function proxima(){
-  indexAtual=(indexAtual+1)%imagens.length;
-  atualizar();
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target === this) fecharLightbox();
+});
+
+function proxima() {
+  indexAtual = (indexAtual + 1) % imagens.length;
+  atualizarLightbox();
 }
 
-function anterior(){
-  indexAtual=(indexAtual-1+imagens.length)%imagens.length;
-  atualizar();
+function anterior() {
+  indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
+  atualizarLightbox();
 }
+
+document.addEventListener("keydown", function(e) {
+  if (document.getElementById("lightbox").style.display === "flex") {
+    if (e.key === "ArrowRight") proxima();
+    if (e.key === "ArrowLeft") anterior();
+    if (e.key === "Escape") fecharLightbox();
+  }
+});
+
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (endX < startX - 50) proxima();
+  if (endX > startX + 50) anterior();
+});
 </script>
 
 </body>
