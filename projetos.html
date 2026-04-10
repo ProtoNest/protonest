@@ -9,10 +9,9 @@ body { background:#0d1117; color:#c9d1d9; font-family:Arial; margin:0; }
 
 .container { max-width:1000px; margin:auto; padding:40px 20px; }
 
-h1 { text-align:center; }
-.sub { text-align:center; color:#8b949e; margin-bottom:30px; }
+h1 { text-align:center; font-size:42px; }
+.sub { text-align:center; color:#8b949e; margin-bottom:30px; font-size:18px; }
 
-/* BLOCO */
 .bloco {
   display:flex;
   flex-wrap:wrap;
@@ -26,7 +25,7 @@ h1 { text-align:center; }
   border-radius:10px;
 }
 
-.lista { max-width:500px; }
+.lista { max-width:500px; font-size:18px; }
 
 /* GALERIA */
 .galeria {
@@ -38,7 +37,7 @@ h1 { text-align:center; }
 
 .galeria img {
   width: 100%;
-  height: 250px;
+  height: 260px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -51,9 +50,10 @@ h1 { text-align:center; }
   right:20px;
   background:#25D366;
   color:#fff;
-  padding:15px;
+  padding:18px;
   border-radius:50px;
   text-decoration:none;
+  font-size:16px;
 }
 
 /* LIGHTBOX */
@@ -65,7 +65,7 @@ h1 { text-align:center; }
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.95);
   justify-content:center;
   align-items:center;
   flex-direction:column;
@@ -73,23 +73,27 @@ h1 { text-align:center; }
 
 .lightbox img {
   max-width:90%;
-  max-height:70%;
+  max-height:65%;
   border-radius:10px;
 }
 
-.lightbox p {
+#legenda {
   margin-top:15px;
-  color:#ccc;
+  font-size:20px;
+  text-align:center;
+  padding:10px;
 }
 
-/* FECHAR */
-.fechar {
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:30px;
+/* BOTÃO */
+.whats-lightbox {
+  margin-top:20px;
+  background:#25D366;
   color:white;
-  cursor:pointer;
+  padding:16px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
 }
 
 /* SETAS */
@@ -97,24 +101,29 @@ h1 { text-align:center; }
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:40px;
+  font-size:45px;
   color:white;
   cursor:pointer;
-  padding:10px;
 }
 
 .esquerda { left:20px; }
 .direita { right:20px; }
 
-/* BOTÃO WHATS DENTRO */
-.whats-lightbox {
-  margin-top:15px;
-  background:#25D366;
-  color:white;
-  padding:12px 20px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
+/* FECHAR */
+.fechar {
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:35px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  h1 { font-size:32px; }
+  .sub { font-size:16px; }
+  #legenda { font-size:18px; }
+  .whats-lightbox { width:80%; font-size:16px; }
 }
 </style>
 </head>
@@ -130,7 +139,6 @@ h1 { text-align:center; }
 
 <div class="bloco">
   <img src="projetos.jpg">
-
   <div class="lista">
     <ul>
       <li>Programação de CLP e IHM</li>
@@ -141,37 +149,25 @@ h1 { text-align:center; }
   </div>
 </div>
 
-<!-- GALERIA -->
 <div class="galeria">
   <img src="img_proj1.jpg" onclick="abrirLightbox(0)">
   <img src="img_proj2.jpg" onclick="abrirLightbox(1)">
-  <img src="img_proj10.jpg" onclick="abrirLightbox(2)">
-  <img src="img_proj3.jpg" onclick="abrirLightbox(3)">
-  <img src="img_proj4.jpg" onclick="abrirLightbox(4)">
-  <img src="img_proj5.jpg" onclick="abrirLightbox(5)">
-  <img src="img_proj6.jpg" onclick="abrirLightbox(6)">
-  <img src="img_proj7.jpg" onclick="abrirLightbox(7)">
-  <img src="img_proj8.jpg" onclick="abrirLightbox(8)">
-  <img src="img_proj9.jpg" onclick="abrirLightbox(9)">
-  <img src="img_proj11.jpg" onclick="abrirLightbox(10)">
+  <img src="img_proj3.jpg" onclick="abrirLightbox(2)">
 </div>
 
 </div>
 
-<!-- BOTÃO WHATS FIXO -->
 <a class="whats-fixo" href="https://wa.me/5555996294266">WhatsApp</a>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
   <span class="fechar" onclick="fecharLightbox()">&times;</span>
-
   <span class="seta esquerda" onclick="anterior()">❮</span>
   <span class="seta direita" onclick="proxima()">❯</span>
 
   <img id="imgLightbox">
   <p id="legenda"></p>
 
-  <a class="whats-lightbox" href="https://wa.me/5555996294266" target="_blank">
+  <a class="whats-lightbox" href="https://wa.me/5555996294266">
     Falar no WhatsApp
   </a>
 </div>
@@ -179,73 +175,36 @@ h1 { text-align:center; }
 <script>
 let imagens = [
   {src:"img_proj1.jpg", legenda:"Projeto PCB"},
-  {src:"img_proj2.jpg", legenda:"Projeto PCB"},
-  {src:"img_proj10.jpg", legenda:"Design PCB"},
-  {src:"img_proj3.jpg", legenda:"Internet das Coisas - IOT"},
-  {src:"img_proj4.jpg", legenda:"Schematic PCB"},
-  {src:"img_proj5.jpg", legenda:"Programação Ladder, C, C++, Python"},
-  {src:"img_proj6.jpg", legenda:"Programação IHM"},
-  {src:"img_proj7.jpg", legenda:"Prototipação Protoboard"},
-  {src:"img_proj8.jpg", legenda:"MVP ThunderBird"},
-  {src:"img_proj9.jpg", legenda:"MVP Aquisição de dados"},
-  {src:"img_proj11.jpg", legenda:"Projetos Automação Industrial"}
+  {src:"img_proj2.jpg", legenda:"Projeto IoT"},
+  {src:"img_proj3.jpg", legenda:"Automação Industrial"}
 ];
 
 let indexAtual = 0;
 
-function abrirLightbox(index) {
-  indexAtual = index;
-  atualizarLightbox();
-  document.getElementById("lightbox").style.display = "flex";
+function abrirLightbox(i){
+  indexAtual=i;
+  atualizar();
+  document.getElementById("lightbox").style.display="flex";
 }
 
-function atualizarLightbox() {
-  document.getElementById("imgLightbox").src = imagens[indexAtual].src;
-  document.getElementById("legenda").innerText = imagens[indexAtual].legenda;
+function atualizar(){
+  imgLightbox.src=imagens[indexAtual].src;
+  legenda.innerText=imagens[indexAtual].legenda;
 }
 
-function fecharLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+function fecharLightbox(){
+  lightbox.style.display="none";
 }
 
-// clicar fora fecha
-document.getElementById("lightbox").addEventListener("click", function(e) {
-  if (e.target === this) fecharLightbox();
-});
-
-// navegação
-function proxima() {
-  indexAtual = (indexAtual + 1) % imagens.length;
-  atualizarLightbox();
+function proxima(){
+  indexAtual=(indexAtual+1)%imagens.length;
+  atualizar();
 }
 
-function anterior() {
-  indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
-  atualizarLightbox();
+function anterior(){
+  indexAtual=(indexAtual-1+imagens.length)%imagens.length;
+  atualizar();
 }
-
-// teclado
-document.addEventListener("keydown", function(e) {
-  if (document.getElementById("lightbox").style.display === "flex") {
-    if (e.key === "ArrowRight") proxima();
-    if (e.key === "ArrowLeft") anterior();
-    if (e.key === "Escape") fecharLightbox();
-  }
-});
-
-// swipe mobile
-let startX = 0;
-
-document.getElementById("lightbox").addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
-
-document.getElementById("lightbox").addEventListener("touchend", e => {
-  let endX = e.changedTouches[0].clientX;
-
-  if (endX < startX - 50) proxima();
-  if (endX > startX + 50) anterior();
-});
 </script>
 
 </body>
