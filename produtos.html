@@ -5,14 +5,52 @@
 <title>Produtos</title>
 
 <style>
-body { background:#0d1117; color:#c9d1d9; font-family:Arial; }
-.container { max-width:1000px; margin:auto; padding:40px; }
-.galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
-.galeria img { width:100%; border-radius:8px; }
-.whats-fixo { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px; border-radius:50px; text-decoration:none;}
-</style>
+body { background:#0d1117; color:#c9d1d9; font-family:Arial; margin:0; }
 
+.container { max-width:1000px; margin:auto; padding:40px 20px; }
+
+h1 { text-align:center; }
+.sub { text-align:center; color:#8b949e; margin-bottom:30px; }
+
+.bloco {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  align-items:center;
+}
+
+.bloco img {
+  width:350px;
+  border-radius:10px;
+}
+
+.lista { max-width:500px; }
+
+.galeria {
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.galeria img {
+  width:100%;
+  border-radius:8px;
+}
+
+.whats-fixo {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px;
+  border-radius:50px;
+  text-decoration:none;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
@@ -20,16 +58,24 @@ body { background:#0d1117; color:#c9d1d9; font-family:Arial; }
 <a href="index.html">← Voltar</a>
 
 <h1>Produtos</h1>
+<p class="sub">Soluções sob medida para indústria e agro.</p>
 
-<ul>
-<li>Quadro de comando para poço</li>
-<li>Quadro com DPS</li>
-<li>Pulverização automática</li>
-</ul>
+<div class="bloco">
+  <img src="produtos1.png">
+
+  <div class="lista">
+    <ul>
+      <li>Quadro de comando para poço artesiano</li>
+      <li>Quadro de proteção com DPS</li>
+      <li>Sistema de pulverização automático</li>
+      <li>Pulverização por seção</li>
+    </ul>
+  </div>
+</div>
 
 <div class="galeria">
-<img src="img_prod1.jpg">
-<img src="img_prod2.jpg">
+  <img src="img_prod1.jpg">
+  <img src="img_prod2.jpg">
 </div>
 
 </div>
