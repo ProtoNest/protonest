@@ -26,23 +26,10 @@ h1 { text-align:center; }
   border-radius:10px;
 }
 
-.lista {
-  max-width:500px;
-}
+.lista { max-width:500px; }
 
 /* GALERIA */
-/*.galeria {
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-.galeria img {
-  width:100%;
-  border-radius:8px;
-}*/
-  .galeria {
+.galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
@@ -51,12 +38,13 @@ h1 { text-align:center; }
 
 .galeria img {
   width: 100%;
-  height: 250px;        /* 🔥 força altura igual */
-  object-fit: cover;    /* 🔥 corta sem distorcer */
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-/* WHATS */
+/* WHATS FIXO */
 .whats-fixo {
   position:fixed;
   bottom:20px;
@@ -68,6 +56,52 @@ h1 { text-align:center; }
   text-decoration:none;
 }
 
+/* LIGHTBOX */
+.lightbox {
+  display:none;
+  position:fixed;
+  z-index:999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:70%;
+  border-radius:10px;
+}
+
+.lightbox p {
+  margin-top:15px;
+  color:#ccc;
+}
+
+/* FECHAR */
+.fechar {
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  color:white;
+  cursor:pointer;
+}
+
+/* BOTÃO WHATS DENTRO */
+.whats-lightbox {
+  margin-top:15px;
+  background:#25D366;
+  color:white;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
 </style>
 </head>
 
@@ -95,22 +129,47 @@ h1 { text-align:center; }
 
 <!-- GALERIA -->
 <div class="galeria">
-  <img src="img_proj1.jpg">
-  <img src="img_proj2.jpg">
-  <img src="img_proj10.jpg">
-  <img src="img_proj3.jpg">
-  <img src="img_proj4.jpg">
-  <img src="img_proj5.jpg">
-  <img src="img_proj6.jpg">
-  <img src="img_proj7.jpg">
-  <img src="img_proj8.jpg">
-  <img src="img_proj9.jpg">
-  <img src="img_proj11.jpg">
+  <img src="img_proj1.jpg" onclick="abrirLightbox(this.src, 'legendafoto1')">
+  <img src="img_proj2.jpg" onclick="abrirLightbox(this.src, 'legendafoto2')">
+  <img src="img_proj10.jpg" onclick="abrirLightbox(this.src, 'legendafoto3')">
+  <img src="img_proj3.jpg" onclick="abrirLightbox(this.src, 'legendafoto4')">
+  <img src="img_proj4.jpg" onclick="abrirLightbox(this.src, 'legendafoto5')">
+  <img src="img_proj5.jpg" onclick="abrirLightbox(this.src, 'legendafoto6')">
+  <img src="img_proj6.jpg" onclick="abrirLightbox(this.src, 'legendafoto7')">
+  <img src="img_proj7.jpg" onclick="abrirLightbox(this.src, 'legendafoto8')">
+  <img src="img_proj8.jpg" onclick="abrirLightbox(this.src, 'legendafoto9')">
+  <img src="img_proj9.jpg" onclick="abrirLightbox(this.src, 'legendafoto10')">
+  <img src="img_proj11.jpg" onclick="abrirLightbox(this.src, 'legendafoto11')">
 </div>
 
 </div>
 
+<!-- BOTÃO WHATS FIXO -->
 <a class="whats-fixo" href="https://wa.me/5555996294266">WhatsApp</a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="fechar" onclick="fecharLightbox()">&times;</span>
+
+  <img id="imgLightbox">
+  <p id="legenda"></p>
+
+  <a class="whats-lightbox" href="https://wa.me/5555996294266" target="_blank">
+    Falar no WhatsApp
+  </a>
+</div>
+
+<script>
+function abrirLightbox(src, texto) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("imgLightbox").src = src;
+  document.getElementById("legenda").innerText = texto;
+}
+
+function fecharLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
