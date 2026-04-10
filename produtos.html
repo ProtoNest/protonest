@@ -9,9 +9,22 @@ body { background:#0d1117; color:#c9d1d9; font-family:Arial; margin:0; }
 
 .container { max-width:1000px; margin:auto; padding:40px 20px; }
 
-h1 { text-align:center; }
-.sub { text-align:center; color:#8b949e; margin-bottom:30px; }
+/* TITULOS */
+h1 { 
+  text-align:center; 
+  font-size:36px;
+  font-weight:700;
+  letter-spacing:1px;
+}
 
+.sub { 
+  text-align:center; 
+  color:#8b949e; 
+  margin-bottom:30px;
+  font-size:18px;
+}
+
+/* BLOCO */
 .bloco {
   display:flex;
   flex-wrap:wrap;
@@ -25,6 +38,11 @@ h1 { text-align:center; }
 }
 
 .lista { max-width:500px; }
+
+.lista li {
+  font-size:17px;
+  margin-bottom:10px;
+}
 
 /* GALERIA */
 .galeria {
@@ -40,6 +58,11 @@ h1 { text-align:center; }
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
 }
 
 /* WHATS FIXO */
@@ -69,15 +92,25 @@ h1 { text-align:center; }
   flex-direction:column;
 }
 
+/* ANIMAÇÃO */
 .lightbox img {
   max-width:90%;
   max-height:70%;
   border-radius:10px;
+  animation: zoom 0.2s ease;
 }
 
-.lightbox p {
-  margin-top:15px;
-  color:#ccc;
+@keyframes zoom {
+  from { transform: scale(0.9); opacity:0; }
+  to { transform: scale(1); opacity:1; }
+}
+
+/* LEGENDA */
+#legenda {
+  font-size:16px;
+  color:#c9d1d9;
+  text-align:center;
+  padding:10px;
 }
 
 /* FECHAR */
@@ -104,64 +137,55 @@ h1 { text-align:center; }
 .esquerda { left:20px; }
 .direita { right:20px; }
 
-/* BOTÃO WHATS DENTRO */
+/* BOTÃO WHATS */
 .whats-lightbox {
   margin-top:15px;
   background:#25D366;
   color:white;
-  padding:12px 20px;
+  padding:14px 24px;
   border-radius:30px;
   text-decoration:none;
   font-weight:bold;
+  box-shadow: 0 0 10px rgba(37,211,102,0.4);
+  transition: 0.2s;
 }
 
+.whats-lightbox:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
 
-  h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
+  h1 { font-size:28px; }
 
-  .sub {
-    font-size: 16px;
-  }
+  .sub { font-size:16px; }
 
   .lista li {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size:16px;
   }
 
   .galeria img {
-    height: 220px; /* pode ajustar */
+    height:220px;
   }
 
-  /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>LEGENDA DO LIGHTBOX */
   #legenda {
-    color: #e6edf3;
-    font-size: 18px;
-    text-align: center;
-    padding: 10px;
+    font-size:20px;
+    font-weight:500;
   }
 
-  /* BOTÃO WHATS DENTRO DA IMAGEM */
   .whats-lightbox {
-    box-shadow: 0 0 10px rgba(37,211,102,0.5);
-    width: 80%;
-    text-align: center;
-    font-size: 16px;
-    padding: 14px 22px;
+    width:80%;
+    text-align:center;
+    font-size:16px;
   }
 
-  /* BOTÃO WHATS FIXO */
   .whats-fixo {
-    font-size: 14px;
-    padding: 14px;
+    font-size:14px;
+    padding:14px;
   }
 
 }
-
-  
 </style>
 </head>
 
@@ -223,15 +247,15 @@ h1 { text-align:center; }
 <script>
 let imagens = [
   {src:"img_prod1.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
-  {src:"img_prod2.jpg", legenda:"Comandos elétricos pulverização por seção"},
-  {src:"img_prod3.jpg", legenda:"Controles elétricos para barra por seção"},
+  {src:"img_prod2.jpg", legenda:"Comando elétrico pulverização"},
+  {src:"img_prod3.jpg", legenda:"Comando elétrico pulverização"},
   {src:"img_prod4.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
   {src:"img_prod5.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
   {src:"img_prod6.jpg", legenda:"Sistema de pulverização inteligente Planta a Planta"},
-  {src:"img_serv1.png", legenda:"Quadros de comando para Irrigação"},
-  {src:"img_serv2.png", legenda:"Quadros de Proteção para instalações elétricas"},
-  {src:"img_serv3.jpg", legenda:"Quadros elétricos de comando Automatizados"},
-  {src:"img_serv4.jpg", legenda:"Quadros de comando dimensionados para poço Artesiano"}
+  {src:"img_serv1.png", legenda:"Quadro de comando Irrigação"},
+  {src:"img_serv2.png", legenda:"Quadro de proteção Elétrica"},
+  {src:"img_serv3.jpg", legenda:"Quadro elétrico de comando Automatizado"},
+  {src:"img_serv4.jpg", legenda:"Quadro de comando poço Artesiano"}
 ];
 
 let indexAtual = 0;
@@ -251,12 +275,10 @@ function fecharLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 
-// clicar fora fecha
 document.getElementById("lightbox").addEventListener("click", function(e) {
   if (e.target === this) fecharLightbox();
 });
 
-// navegação
 function proxima() {
   indexAtual = (indexAtual + 1) % imagens.length;
   atualizarLightbox();
@@ -267,7 +289,6 @@ function anterior() {
   atualizarLightbox();
 }
 
-// teclado
 document.addEventListener("keydown", function(e) {
   if (document.getElementById("lightbox").style.display === "flex") {
     if (e.key === "ArrowRight") proxima();
@@ -276,7 +297,6 @@ document.addEventListener("keydown", function(e) {
   }
 });
 
-// swipe mobile
 let startX = 0;
 
 document.getElementById("lightbox").addEventListener("touchstart", e => {
