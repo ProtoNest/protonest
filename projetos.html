@@ -24,6 +24,28 @@ h1 {
   font-size:18px;
 }
 
+/* BOTÃO VOLTAR */
+.btn-voltar{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:30px;
+  padding:12px 18px;
+  background:#161b22;
+  border:1px solid #30363d;
+  color:#c9d1d9;
+  text-decoration:none;
+  border-radius:10px;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.btn-voltar:hover{
+  background:#21262d;
+  border-color:#4ea8de;
+  transform:translateX(-3px);
+}
+  
 /* BLOCO */
 .bloco {
   display:flex;
@@ -189,7 +211,9 @@ h1 {
 
 <div class="container">
 
-<a href="index.html">← Voltar</a>
+<a href="index.html" class="btn-voltar">
+  ← Voltar ao início
+</a>
 
 <h1>Projetos</h1>
 <p class="sub">Desenvolvimento de soluções personalizadas em automação e tecnologia.</p>
