@@ -6,22 +6,35 @@
 <title>Produtos</title>
 
 <style>
-body { background:#0d1117; color:#c9d1d9; font-family:Arial; margin:0; }
 
-.container { max-width:1000px; margin:auto; padding:40px 20px; }
-
-/* TITULO */
-h1 { 
-  text-align:center; 
-  font-size:38px;
-  font-weight:700;
+body{
+  background:#0d1117;
+  color:#c9d1d9;
+  font-family:Arial;
+  margin:0;
 }
 
-.sub { 
-  text-align:center; 
-  color:#8b949e; 
-  margin-bottom:30px;
-  font-size:18px;
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* TITULO */
+h1{
+  text-align:center;
+  font-size:42px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.sub{
+  text-align:center;
+  color:#8b949e;
+  margin-bottom:40px;
+  font-size:19px;
+  line-height:1.6;
 }
 
 /* BOTÃO VOLTAR */
@@ -29,7 +42,7 @@ h1 {
   display:inline-flex;
   align-items:center;
   gap:8px;
-  margin-bottom:30px;
+  margin-bottom:35px;
   padding:12px 18px;
   background:#161b22;
   border:1px solid #30363d;
@@ -45,57 +58,87 @@ h1 {
   border-color:#4ea8de;
   transform:translateX(-3px);
 }
-  
-/* BLOCO */
-.bloco {
+
+/* BLOCO PRINCIPAL */
+.bloco{
   display:flex;
   flex-wrap:wrap;
-  gap:30px;
+  gap:40px;
   align-items:center;
+  justify-content:center;
+  margin-bottom:50px;
 }
 
-.bloco img {
-  width:350px;
-  border-radius:10px;
+.bloco img{
+  width:380px;
+  max-width:100%;
+  border-radius:14px;
 }
 
-.lista { max-width:500px; }
+.lista{
+  max-width:550px;
+}
 
-.lista li {
+.lista h2{
+  margin-top:0;
+  font-size:30px;
+  margin-bottom:20px;
+}
+
+.lista p{
+  color:#8b949e;
+  line-height:1.7;
+  font-size:17px;
+  margin-bottom:25px;
+}
+
+.lista ul{
+  padding-left:20px;
+}
+
+.lista li{
   font-size:18px;
-  margin-bottom:10px;
+  margin-bottom:14px;
+  line-height:1.5;
 }
 
 /* GALERIA */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+  margin-top:40px;
 }
 
-.galeria img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
+.galeria img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.galeria img:hover{
+  transform:scale(1.02);
 }
 
 /* WHATS FIXO */
-.whats-fixo {
+.whats-fixo{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:#fff;
-  padding:16px;
+  padding:16px 20px;
   border-radius:50px;
   text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 20px rgba(37,211,102,0.3);
 }
 
 /* LIGHTBOX */
-.lightbox {
+.lightbox{
   display:none;
   position:fixed;
   z-index:999;
@@ -103,69 +146,66 @@ h1 {
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.92);
   justify-content:center;
   align-items:center;
   flex-direction:column;
 }
 
-.lightbox img {
-  max-width:90%;
-  max-height:70%;
-  border-radius:10px;
+.lightbox img{
+  max-width:92%;
+  max-height:72%;
+  border-radius:12px;
 }
 
 /* LEGENDA */
-#legenda {
-  margin-top:15px;
+#legenda{
+  margin-top:18px;
   color:#ccc;
-  font-size:20px;
+  font-size:22px;
   text-align:center;
+  padding:0 20px;
 }
 
 /* FECHAR */
-.fechar {
+.fechar{
   position:absolute;
   top:20px;
   right:30px;
-  font-size:30px;
+  font-size:34px;
   color:white;
   cursor:pointer;
 }
 
 /* SETAS */
-.seta {
+.seta{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:42px;
+  font-size:44px;
   cursor:pointer;
-  padding:12px;
+  padding:14px;
+  color:white;
 
-  color: white;
+  mix-blend-mode:difference;
 
-  /* CONTRASTE AUTOMÁTICO */
-  mix-blend-mode: difference;
-
-  /* GARANTE VISIBILIDADE */
-  text-shadow: 
+  text-shadow:
     0 0 5px rgba(0,0,0,0.8),
     0 0 10px rgba(0,0,0,0.6);
 
-  /* área clicável maior */
-  background: transparent;
   border-radius:50%;
 }
-  .seta:active {
+
+.seta:active{
   transform:translateY(-50%) scale(0.9);
 }
 
-.esquerda { left:20px; }
-.direita { right:20px; }
+.esquerda{ left:20px; }
+.direita{ right:20px; }
 
-/* BOTÃO WHATS */
-.whats-lightbox {
-  margin-top:20px;
+/* BOTÃO WHATS LIGHTBOX */
+.whats-lightbox{
+  margin-top:22px;
   background:#25D366;
   color:white;
   padding:16px 28px;
@@ -175,35 +215,67 @@ h1 {
   font-size:18px;
 }
 
-/* MOBILE (AGORA FUNCIONA) */
-@media (max-width: 600px) {
+/* MOBILE */
+@media (max-width:768px){
 
-  h1 { font-size:32px !important; }
+  .container{
+    padding:30px 18px;
+  }
 
-  .sub { font-size:18px !important; }
+  h1{
+    font-size:34px;
+  }
 
-  .lista li { font-size:18px !important; }
+  .sub{
+    font-size:18px;
+    line-height:1.7;
+  }
 
-  .galeria img { height:240px !important; }
+  .bloco{
+    gap:30px;
+  }
 
-  #legenda {
-    font-size:24px !important;
+  .lista h2{
+    font-size:28px;
+    text-align:center;
+  }
+
+  .lista p{
+    font-size:17px;
+    text-align:left;
+  }
+
+  .lista li{
+    font-size:18px;
+  }
+
+  .galeria{
+    grid-template-columns:1fr;
+  }
+
+  .galeria img{
+    height:240px;
+  }
+
+  #legenda{
+    font-size:22px;
     font-weight:bold;
   }
 
-  .whats-lightbox {
-    width:90% !important;
+  .whats-lightbox{
+    width:88%;
     text-align:center;
-    font-size:20px !important;
-    padding:18px !important;
+    font-size:20px;
+    padding:18px;
   }
 
-  .whats-fixo {
-    font-size:16px !important;
-    padding:18px !important;
+  .whats-fixo{
+    font-size:16px;
+    padding:18px;
   }
 
 }
+
 </style>
 </head>
 
@@ -216,96 +288,214 @@ h1 {
 </a>
 
 <h1>Produtos</h1>
-<p class="sub">Soluções sob medida para indústria e agro.</p>
+
+<p class="sub">
+Dispositivos inteligentes, monitoramento remoto e soluções IoT para automação e gestão de dados.
+</p>
 
 <div class="bloco">
+
   <img src="produtos1.png">
 
   <div class="lista">
+
+    <h2>Soluções Inteligentes</h2>
+
+    <p>
+      Produtos e dispositivos desenvolvidos para automação,
+      monitoramento remoto e aquisição de dados em aplicações
+      industriais, comerciais e agrícolas.
+    </p>
+
     <ul>
-      <li>Quadro de comando para poço artesiano</li>
-      <li>Quadro de proteção com DPS</li>
-      <li>Sistema de pulverização automático</li>
-      <li>Pulverização por seção</li>
+
+      <li>Relés inteligentes Wi-Fi e automação remota</li>
+
+      <li>Medidores inteligentes de energia</li>
+
+      <li>Monitoramento de motores e vibração</li>
+
+      <li>Dashboards personalizados e histórico de dados</li>
+
+      <li>Integração com Tuya, Sonoff e MQTT</li>
+
+      <li>Sistemas IoT para monitoramento industrial</li>
+
     </ul>
+
   </div>
+
 </div>
 
 <div class="galeria">
+
   <img src="img_prod1.jpg" onclick="abrirLightbox(0)">
+
   <img src="img_prod2.jpg" onclick="abrirLightbox(1)">
+
   <img src="img_prod3.jpg" onclick="abrirLightbox(2)">
+
   <img src="img_prod4.jpg" onclick="abrirLightbox(3)">
+
   <img src="img_prod5.jpg" onclick="abrirLightbox(4)">
+
   <img src="img_prod6.jpg" onclick="abrirLightbox(5)">
+
   <img src="img_serv1.png" onclick="abrirLightbox(6)">
+
   <img src="img_serv2.png" onclick="abrirLightbox(7)">
+
   <img src="img_serv3.jpg" onclick="abrirLightbox(8)">
+
   <img src="img_serv4.jpg" onclick="abrirLightbox(9)">
-</div>
 
 </div>
 
-<a class="whats-fixo" href="https://wa.me/5555996294266">WhatsApp</a>
+</div>
+
+<a class="whats-fixo" href="https://wa.me/5555996294266">
+  WhatsApp
+</a>
+
+<!-- LIGHTBOX -->
 
 <div id="lightbox" class="lightbox">
-  <span class="fechar" onclick="fecharLightbox()">&times;</span>
 
-  <span class="seta esquerda" onclick="anterior()">❮</span>
-  <span class="seta direita" onclick="proxima()">❯</span>
+  <span class="fechar" onclick="fecharLightbox()">
+    &times;
+  </span>
+
+  <span class="seta esquerda" onclick="anterior()">
+    ❮
+  </span>
+
+  <span class="seta direita" onclick="proxima()">
+    ❯
+  </span>
 
   <img id="imgLightbox">
+
   <p id="legenda"></p>
 
   <a class="whats-lightbox" href="https://wa.me/5555996294266">
     Falar no WhatsApp
   </a>
+
 </div>
 
 <script>
+
 let imagens = [
-  {src:"img_prod1.jpg", legenda:"Sistema de pulverização inteligente"},
-  {src:"img_prod2.jpg", legenda:"Comando elétrico pulverização"},
-  {src:"img_prod3.jpg", legenda:"Controle elétrico"},
-  {src:"img_prod4.jpg", legenda:"Pulverização automática"},
-  {src:"img_prod5.jpg", legenda:"Sistema agrícola"},
-  {src:"img_prod6.jpg", legenda:"Automação industrial"},
-  {src:"img_serv1.png", legenda:"Quadro irrigação"},
-  {src:"img_serv2.png", legenda:"Proteção elétrica"},
-  {src:"img_serv3.jpg", legenda:"Quadro automatizado"},
-  {src:"img_serv4.jpg", legenda:"Poço artesiano"}
+
+  {
+    src:"img_prod1.jpg",
+    legenda:"Relé inteligente para automação remota"
+  },
+
+  {
+    src:"img_prod2.jpg",
+    legenda:"Monitoramento inteligente de energia"
+  },
+
+  {
+    src:"img_prod3.jpg",
+    legenda:"Dispositivos IoT para controle remoto"
+  },
+
+  {
+    src:"img_prod4.jpg",
+    legenda:"Integração com sistemas inteligentes"
+  },
+
+  {
+    src:"img_prod5.jpg",
+    legenda:"Dashboard e análise de dados"
+  },
+
+  {
+    src:"img_prod6.jpg",
+    legenda:"Monitoramento industrial em tempo real"
+  },
+
+  {
+    src:"img_serv1.png",
+    legenda:"Controle inteligente de dispositivos"
+  },
+
+  {
+    src:"img_serv2.png",
+    legenda:"Proteção e monitoramento elétrico"
+  },
+
+  {
+    src:"img_serv3.jpg",
+    legenda:"Automação e conectividade industrial"
+  },
+
+  {
+    src:"img_serv4.jpg",
+    legenda:"Sistema inteligente de monitoramento"
+  }
+
 ];
 
 let indexAtual = 0;
 
-function abrirLightbox(index) {
+function abrirLightbox(index){
+
   indexAtual = index;
+
   atualizarLightbox();
+
   document.getElementById("lightbox").style.display = "flex";
+
 }
 
-function atualizarLightbox() {
-  document.getElementById("imgLightbox").src = imagens[indexAtual].src;
-  document.getElementById("legenda").innerText = imagens[indexAtual].legenda;
+function atualizarLightbox(){
+
+  document.getElementById("imgLightbox").src =
+  imagens[indexAtual].src;
+
+  document.getElementById("legenda").innerText =
+  imagens[indexAtual].legenda;
+
 }
 
-function fecharLightbox() {
+function fecharLightbox(){
+
   document.getElementById("lightbox").style.display = "none";
+
 }
 
-document.getElementById("lightbox").addEventListener("click", function(e) {
-  if (e.target === this) fecharLightbox();
+document.getElementById("lightbox")
+.addEventListener("click", function(e){
+
+  if(e.target === this){
+
+    fecharLightbox();
+
+  }
+
 });
 
-function proxima() {
-  indexAtual = (indexAtual + 1) % imagens.length;
+function proxima(){
+
+  indexAtual =
+  (indexAtual + 1) % imagens.length;
+
   atualizarLightbox();
+
 }
 
-function anterior() {
-  indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
+function anterior(){
+
+  indexAtual =
+  (indexAtual - 1 + imagens.length) % imagens.length;
+
   atualizarLightbox();
+
 }
+
 </script>
 
 </body>
