@@ -7,102 +7,295 @@
 
 <style>
 
-/* TOPO */
-.titulo {
-  font-size: 2.8em;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.azul { color: #4ea8de; }
-.verde { color: #2ea043; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d1117;
-  color: #c9d1d9;
+/* SCROLL SUAVE */
+html{
+  scroll-behavior:smooth;
 }
 
-.container {
-  padding: 40px 20px;
-  text-align: center;
+/* BODY */
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0d1117;
+  color:#c9d1d9;
 }
 
-.slogan {
-  color: #8b949e;
+/* MENU TOPO */
+.menu{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#161b22;
+  border-bottom:1px solid #30363d;
 }
 
-/* SOBRE */
-.sobre {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  text-align: left;
+.menu-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
 }
 
-.sobre img {
-  width: 350px;
-  border-radius: 10px;
+.logo-menu{
+  font-size:22px;
+  font-weight:bold;
 }
 
-.sobre-texto {
-  max-width: 500px;
+.azul{ color:#4ea8de; }
+.verde{ color:#2ea043; }
+
+.menu-links{
+  display:flex;
+  gap:25px;
 }
 
-.sobre-texto p {
-  margin-bottom: 12px;
+.menu-links a{
+  color:#c9d1d9;
+  text-decoration:none;
+  font-size:15px;
+  transition:0.3s;
 }
 
-/* CARDS */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.menu-links a:hover{
+  color:#58a6ff;
 }
 
-.card {
-  background: #161b22;
-  padding: 20px;
-  border-radius: 10px;
-  width: 260px;
+/* HERO */
+.hero{
+  padding:90px 20px 70px;
+  text-align:center;
+  background:
+  linear-gradient(rgba(13,17,23,0.85), rgba(13,17,23,0.95)),
+  url("produtos1.png");
+  background-size:cover;
+  background-position:center;
 }
 
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer; /* 👈 melhora UX no mobile */
+.titulo{
+  font-size:3.2em;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.headline{
+  max-width:900px;
+  margin:auto;
+  font-size:1.4em;
+  line-height:1.5;
+  color:#c9d1d9;
+}
+
+.slogan{
+  color:#8b949e;
+  margin-top:20px;
+  font-size:18px;
 }
 
 /* BOTÕES */
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #238636;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+.hero-botoes{
+  margin-top:35px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
-.btn:hover {
-  background: #2ea043;
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#238636;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#2ea043;
+  transform:translateY(-2px);
+}
+
+.btn-sec{
+  background:#21262d;
+}
+
+.btn-sec:hover{
+  background:#30363d;
+}
+
+/* CONTAINERS */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+/* TITULOS */
+h2{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.sub{
+  text-align:center;
+  color:#8b949e;
+  margin-bottom:40px;
+  font-size:18px;
+}
+
+/* SOBRE */
+.sobre{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:40px;
+  align-items:center;
+}
+
+.sobre img{
+  width:380px;
+  max-width:100%;
+  border-radius:12px;
+}
+
+.sobre-texto{
+  max-width:550px;
+}
+
+.sobre-texto p{
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:18px;
+}
+
+/* TECNOLOGIAS */
+.techs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-top:40px;
+}
+
+.tech{
+  background:#161b22;
+  border:1px solid #30363d;
+  padding:14px 22px;
+  border-radius:50px;
+  font-size:16px;
+}
+
+/* CARDS */
+.card-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+
+.card{
+  background:#161b22;
+  padding:20px;
+  border-radius:14px;
+  width:280px;
+  transition:0.3s;
+  border:1px solid #21262d;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#30363d;
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.card h3{
+  font-size:24px;
+  margin-top:18px;
+}
+
+.card p{
+  color:#8b949e;
+  line-height:1.5;
 }
 
 /* WHATS FIXO */
-.whats-fixo {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
+.whats-fixo{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:16px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 20px rgba(37,211,102,0.3);
+}
+
+/* RODAPÉ */
+.footer{
+  text-align:center;
+  padding:40px 20px;
+  border-top:1px solid #21262d;
+  color:#8b949e;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .menu-container{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .menu-links{
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .titulo{
+    font-size:2.3em;
+  }
+
+  .headline{
+    font-size:1.1em;
+  }
+
+  h2{
+    font-size:28px;
+  }
+
+  .sobre-texto p{
+    font-size:17px;
+  }
+
+  .card{
+    width:100%;
+    max-width:340px;
+  }
+
+  .card img{
+    height:210px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
 }
 
 </style>
@@ -110,79 +303,222 @@ body {
 
 <body>
 
-<div class="container">
-  <h1 class="titulo">
-    <span class="azul">ProtoNest</span> <span class="verde">Automação</span>
-  </h1>
-  <p class="slogan">Automação Inteligente e Eficiente</p>
-</div>
+<!-- MENU -->
+<div class="menu">
+  <div class="menu-container">
 
-<div class="container">
-  <div class="sobre">
-    <img src="ProtoNest.png">
-
-    <div class="sobre-texto">
-      <h2>SOBRE A PROTONEST AUTOMAÇÃO</h2>
-
-      <p>Desde 2017 transformamos desafios complexos em soluções eficientes para a indústria e o desenvolvimento de novos produtos.</p>
-
-      <p>A ProtoNest atua como braço de engenharia para empresas sem P&D, transformando ideias em soluções com agilidade e precisão.</p>
-
-      <a class="btn" href="https://wa.me/5555996294266">Falar no WhatsApp</a>
+    <div class="logo-menu">
+      <span class="azul">ProtoNest</span>
+      <span class="verde">Automação</span>
     </div>
+
+    <div class="menu-links">
+      <a href="#inicio">Início</a>
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#empresa">Para Sua Empresa</a>
+      <a href="https://wa.me/5555996294266">Contato</a>
+    </div>
+
   </div>
 </div>
 
-<div class="container">
-  <h2>Para sua Empresa</h2>
-  <p>Parceria técnica e soluções precisas que se encaixam na necessidade da sua empresa.</p>
+<!-- HERO -->
+<section class="hero" id="inicio">
+
+  <h1 class="titulo">
+    <span class="azul">ProtoNest</span>
+    <span class="verde">Automação</span>
+  </h1>
+
+  <p class="headline">
+    Soluções inteligentes em automação industrial,
+    eletrônica embarcada, IoT e desenvolvimento
+    de produtos para indústria e agro.
+  </p>
+
+  <p class="slogan">
+    Engenharia aplicada com foco em eficiência, inovação e resultado real.
+  </p>
+
+  <div class="hero-botoes">
+    <a class="btn" href="https://wa.me/5555996294266">
+      Falar no WhatsApp
+    </a>
+
+    <a class="btn btn-sec" href="#empresa">
+      Conhecer Serviços
+    </a>
+  </div>
+
+</section>
+
+<!-- SOBRE -->
+<section class="container" id="quem-somos">
+
+  <h2>Quem Somos</h2>
+
+  <p class="sub">
+    Desenvolvimento de soluções tecnológicas sob medida.
+  </p>
+
+  <div class="sobre">
+
+    <img src="ProtoNest.png">
+
+    <div class="sobre-texto">
+
+      <p>
+        Desde 2017 a ProtoNest Automação transforma
+        desafios complexos em soluções eficientes
+        para a indústria e o agro.
+      </p>
+
+      <p>
+        Atuamos como parceiro de engenharia para
+        empresas que precisam tirar projetos do papel
+        com agilidade, precisão e confiabilidade.
+      </p>
+
+      <p>
+        Desenvolvemos projetos completos envolvendo
+        automação industrial, eletrônica embarcada,
+        IoT, CLP, IHM, sistemas inteligentes e
+        desenvolvimento de novos produtos.
+      </p>
+
+      <a class="btn" href="https://wa.me/5555996294266">
+        Solicitar Atendimento
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TECNOLOGIAS -->
+<section class="container" id="tecnologias">
+
+  <h2>Tecnologias</h2>
+
+  <p class="sub">
+    Tecnologias utilizadas no desenvolvimento dos projetos.
+  </p>
+
+  <div class="techs">
+
+    <div class="tech">CLP</div>
+    <div class="tech">IHM</div>
+    <div class="tech">ESP32</div>
+    <div class="tech">IoT</div>
+    <div class="tech">MQTT</div>
+    <div class="tech">Node-RED</div>
+    <div class="tech">Python</div>
+    <div class="tech">C / C++</div>
+    <div class="tech">Eletrônica Embarcada</div>
+    <div class="tech">PCB Design</div>
+    <div class="tech">Automação Industrial</div>
+    <div class="tech">Visão Computacional</div>
+
+  </div>
+
+</section>
+
+<!-- CARDS -->
+<section class="container" id="empresa">
+
+  <h2>Para Sua Empresa</h2>
+
+  <p class="sub">
+    Soluções técnicas desenvolvidas conforme a necessidade do seu projeto.
+  </p>
 
   <div class="card-container">
 
     <div class="card">
       <img src="projetos.jpg">
+
       <h3>Projetos</h3>
-      <p>Desenvolvimento de soluções personalizadas.</p>
-      <a class="btn" href="projetos.html">Saiba mais</a>
+
+      <p>
+        Desenvolvimento de soluções personalizadas
+        em automação e tecnologia.
+      </p>
+
+      <a class="btn" href="projetos.html">
+        Saiba mais
+      </a>
     </div>
 
     <div class="card">
       <img src="servicos.jpg">
+
       <h3>Serviços</h3>
-      <p>Instalação e suporte técnico especializado.</p>
-      <a class="btn" href="servicos.html">Saiba mais</a>
+
+      <p>
+        Instalação, manutenção e suporte técnico
+        especializado.
+      </p>
+
+      <a class="btn" href="servicos.html">
+        Saiba mais
+      </a>
     </div>
 
     <div class="card">
       <img src="produtos1.png">
+
       <h3>Produtos</h3>
-      <p>Soluções sob medida para indústria e agro.</p>
-      <a class="btn" href="produtos.html">Saiba mais</a>
+
+      <p>
+        Soluções sob medida para indústria,
+        irrigação e agro.
+      </p>
+
+      <a class="btn" href="produtos.html">
+        Saiba mais
+      </a>
     </div>
 
   </div>
+
+</section>
+
+<!-- RODAPÉ -->
+<div class="footer">
+  © ProtoNest Automação — Automação Inteligente e Eficiente
 </div>
 
+<!-- WHATS -->
 <a class="whats-fixo" href="https://wa.me/5555996294266">
   WhatsApp
 </a>
 
-<!-- 🔥 SCRIPT MOBILE -->
+<!-- MOBILE CLICK -->
 <script>
-if (window.innerWidth <= 768) {
+
+if(window.innerWidth <= 768){
+
   const cards = document.querySelectorAll(".card");
 
   cards.forEach(card => {
+
     const img = card.querySelector("img");
     const link = card.querySelector(".btn");
 
-    if (img && link) {
+    if(img && link){
+
       img.addEventListener("click", () => {
         window.location.href = link.href;
       });
+
     }
+
   });
+
 }
+
 </script>
 
 </body>
