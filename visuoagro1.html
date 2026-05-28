@@ -1,12 +1,13 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VisuoAgro - Agricultura Inteligente</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>VisuoAgro • Agricultura Inteligente</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,16 +18,18 @@
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#07140d;
+    background:#050816;
     color:white;
+    font-family:'Inter',sans-serif;
     overflow-x:hidden;
 }
+
+/* ===== HERO ===== */
 
 .hero{
     min-height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
     url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920');
     background-size:cover;
     background-position:center;
@@ -35,77 +38,98 @@ body{
     justify-content:center;
     text-align:center;
     padding:40px;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#00ff8840,transparent 40%);
 }
 
 .hero-content{
-    max-width:1000px;
+    max-width:1100px;
+    position:relative;
+    z-index:2;
 }
 
 .logo{
-    font-size:72px;
-    font-weight:800;
-    color:#6cff7f;
+    font-family:'Orbitron',sans-serif;
+    font-size:82px;
+    font-weight:900;
+    color:#00ff88;
     margin-bottom:20px;
+    text-shadow:0 0 25px #00ff88;
 }
 
 .subtitle{
     font-size:28px;
-    font-weight:300;
-    line-height:1.5;
-    margin-bottom:40px;
+    color:#d6d6d6;
+    line-height:1.6;
+    margin-bottom:45px;
 }
 
 .btn{
     display:inline-block;
-    padding:18px 40px;
-    background:#47ff6f;
-    color:#06110a;
+    padding:18px 45px;
+    background:#00ff88;
+    color:#04110b;
     text-decoration:none;
     font-weight:700;
-    border-radius:12px;
-    transition:0.3s;
+    border-radius:14px;
     font-size:18px;
+    transition:0.3s;
+    box-shadow:0 0 30px rgba(0,255,136,0.35);
 }
 
 .btn:hover{
-    transform:scale(1.05);
-    background:#7bff96;
+    transform:translateY(-5px);
+    box-shadow:0 0 50px rgba(0,255,136,0.55);
 }
+
+/* ===== SECTION ===== */
 
 .section{
     padding:100px 8%;
 }
 
 .section-title{
-    font-size:48px;
-    margin-bottom:20px;
-    color:#69ff88;
+    font-family:'Orbitron',sans-serif;
+    font-size:52px;
+    color:#00ff88;
+    margin-bottom:25px;
 }
 
 .section-text{
-    font-size:20px;
-    line-height:1.8;
     color:#d0d0d0;
+    line-height:1.9;
+    font-size:20px;
+    max-width:1100px;
 }
+
+/* ===== CARDS ===== */
 
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-    margin-top:60px;
+    gap:35px;
+    margin-top:70px;
 }
 
 .card{
-    background:#102318;
-    border-radius:20px;
+    background:#0b1328;
+    border:1px solid rgba(0,255,136,0.12);
+    border-radius:22px;
     overflow:hidden;
-    transition:0.3s;
-    border:1px solid rgba(255,255,255,0.08);
+    transition:0.4s;
+    box-shadow:0 0 25px rgba(0,0,0,0.35);
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    transform:translateY(-12px);
+    box-shadow:0 0 45px rgba(0,255,136,0.2);
 }
 
 .card img{
@@ -119,34 +143,52 @@ body{
 }
 
 .card-title{
+    font-family:'Orbitron',sans-serif;
+    color:#00ff88;
     font-size:28px;
-    margin-bottom:15px;
-    color:#69ff88;
+    margin-bottom:18px;
 }
 
 .card-text{
-    line-height:1.7;
-    color:#d9d9d9;
+    color:#d7d7d7;
+    line-height:1.8;
 }
+
+/* ===== FEATURES ===== */
 
 .features{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
-    margin-top:50px;
+    margin-top:60px;
 }
 
 .feature{
-    background:#0f2016;
-    padding:25px;
+    background:#09101f;
+    border:1px solid rgba(0,255,136,0.08);
     border-radius:18px;
-    border:1px solid rgba(255,255,255,0.06);
+    padding:30px;
+    transition:0.3s;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+    border-color:#00ff88;
 }
 
 .feature h3{
-    color:#6cff7f;
-    margin-bottom:12px;
+    color:#00ff88;
+    margin-bottom:14px;
+    font-size:22px;
+    font-family:'Orbitron',sans-serif;
 }
+
+.feature p{
+    color:#d0d0d0;
+    line-height:1.7;
+}
+
+/* ===== STATUS ===== */
 
 .stats{
     display:grid;
@@ -156,46 +198,65 @@ body{
 }
 
 .stat{
-    background:#12271b;
-    border-radius:18px;
+    background:#09101f;
+    border-radius:20px;
+    border:1px solid rgba(0,255,136,0.08);
     padding:35px;
     text-align:center;
 }
 
 .stat-number{
-    font-size:48px;
-    font-weight:800;
-    color:#6cff7f;
-    margin-bottom:10px;
+    font-size:52px;
+    font-weight:900;
+    color:#00ff88;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:12px;
+    text-shadow:0 0 18px rgba(0,255,136,0.35);
 }
 
+.stat p{
+    color:#d0d0d0;
+}
+
+/* ===== FOOTER ===== */
+
 .footer{
-    background:#050d08;
+    background:#03060f;
     text-align:center;
-    padding:60px 20px;
+    padding:80px 20px;
+    border-top:1px solid rgba(0,255,136,0.1);
 }
 
 .footer h2{
-    color:#69ff88;
+    font-family:'Orbitron',sans-serif;
+    color:#00ff88;
+    font-size:48px;
     margin-bottom:20px;
-    font-size:40px;
 }
 
 .footer p{
-    color:#c9c9c9;
-    margin-bottom:30px;
+    color:#cfcfcf;
     font-size:20px;
+    margin-bottom:35px;
 }
 
 .whatsapp{
-    background:#25D366;
-    color:white;
-    padding:18px 35px;
-    border-radius:12px;
+    display:inline-block;
+    background:#00ff88;
+    color:#04110b;
+    padding:18px 38px;
+    border-radius:14px;
     text-decoration:none;
     font-weight:700;
-    display:inline-block;
+    transition:0.3s;
+    box-shadow:0 0 35px rgba(0,255,136,0.35);
 }
+
+.whatsapp:hover{
+    transform:translateY(-5px);
+}
+
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
@@ -221,14 +282,16 @@ body{
 
 <div class="hero-content">
 
-<h1 class="logo">VISUOAGRO</h1>
+<h1 class="logo">
+VISUOAGRO
+</h1>
 
 <p class="subtitle">
-Transformando dados em decisões inteligentes no Agro.<br>
-Monitoramento climático, Inteligência Artificial e automação agrícola em uma única plataforma.
+Plataforma Inteligente de Agricultura de Precisão.<br>
+IoT, Inteligência Artificial, Automação Agrícola e Monitoramento em Tempo Real.
 </p>
 
-<a href="https://wa.me/5555999235620" class="btn">
+<a href="https://wa.me/5555996294266" class="btn">
 Solicitar Demonstração
 </a>
 
@@ -239,11 +302,11 @@ Solicitar Demonstração
 <section class="section">
 
 <h2 class="section-title">
-Agricultura Inteligente em Tempo Real
+Tecnologia Inteligente para o Agro
 </h2>
 
 <p class="section-text">
-O VisuoAgro integra sensores IoT, Inteligência Artificial, monitoramento climático e automação agrícola para antecipar problemas na lavoura e aumentar produtividade com decisões orientadas por dados.
+O VisuoAgro transforma sensores, clima, irrigação e Inteligência Artificial em decisões estratégicas para o produtor rural. Monitoramento contínuo, automação inteligente e análise em tempo real da lavoura em uma única plataforma.
 </p>
 
 <div class="cards">
@@ -259,7 +322,7 @@ Dashboard Inteligente
 </h3>
 
 <p class="card-text">
-Visualize temperatura, umidade, chuva, vento, irrigação, alertas críticos e dados históricos em dashboards modernos acessíveis pelo celular ou computador.
+Visualização completa de sensores climáticos, umidade do solo, irrigação, alertas críticos, mapas inteligentes e análise histórica da propriedade.
 </p>
 
 </div>
@@ -276,7 +339,7 @@ Estufas Inteligentes
 </h3>
 
 <p class="card-text">
-Controle automático de ventilação, irrigação, temperatura, nebulização e iluminação para ambientes agrícolas protegidos e plantio indoor.
+Controle automatizado de ventilação, temperatura, iluminação, irrigação e nebulização para ambientes agrícolas protegidos e produção indoor.
 </p>
 
 </div>
@@ -293,7 +356,7 @@ Irrigação Inteligente
 </h3>
 
 <p class="card-text">
-Automatize bombas, válvulas e setores de irrigação com base em umidade do solo, previsão climática e análise inteligente do ambiente.
+Automação de bombas e válvulas baseada em umidade do solo, clima e previsão meteorológica, reduzindo desperdícios e aumentando eficiência.
 </p>
 
 </div>
@@ -306,39 +369,39 @@ Automatize bombas, válvulas e setores de irrigação com base em umidade do sol
 <section class="section">
 
 <h2 class="section-title">
-Tecnologia Aplicada ao Campo
+Módulos Inteligentes
 </h2>
 
 <div class="features">
 
 <div class="feature">
-<h3>🌦 Monitoramento Climático</h3>
-<p>Temperatura, umidade, vento, chuva, radiação solar e previsão meteorológica integrada.</p>
+<h3>🌦 Central Climática</h3>
+<p>Temperatura, umidade, vento, chuva, pressão atmosférica e radiação solar em tempo real.</p>
+</div>
+
+<div class="feature">
+<h3>🌱 Sensores de Solo</h3>
+<p>Monitoramento inteligente de umidade, fertilidade, pH e condutividade do solo.</p>
 </div>
 
 <div class="feature">
 <h3>🤖 Inteligência Artificial</h3>
-<p>Identificação de pragas, falhas de plantio e estresse hídrico através de visão computacional.</p>
+<p>Detecção de pragas, falhas de plantio e estresse hídrico através de visão computacional.</p>
 </div>
 
 <div class="feature">
 <h3>💧 Irrigação Automatizada</h3>
-<p>Acionamento inteligente de irrigação baseado em dados reais do solo e clima.</p>
+<p>Controle inteligente baseado em dados reais do ambiente agrícola.</p>
 </div>
 
 <div class="feature">
-<h3>📊 Dashboard em Tempo Real</h3>
-<p>Visualização remota de todos os dados operacionais da propriedade.</p>
+<h3>📊 Dashboard Web</h3>
+<p>Acesso remoto via celular ou computador com gráficos, alertas e relatórios automáticos.</p>
 </div>
 
 <div class="feature">
-<h3>🛰 Georreferenciamento</h3>
-<p>Mapeamento inteligente da lavoura através de GPS e sensores distribuídos.</p>
-</div>
-
-<div class="feature">
-<h3>⚡ Automação Inteligente</h3>
-<p>Controle automatizado de estufas, bombas, ventilação e processos agrícolas.</p>
+<h3>⚡ Automação Agrícola</h3>
+<p>Controle automático de bombas, válvulas, ventilação, iluminação e estufas.</p>
 </div>
 
 </div>
@@ -348,7 +411,7 @@ Tecnologia Aplicada ao Campo
 <section class="section">
 
 <h2 class="section-title">
-Resultados Reais
+Agricultura Orientada por Dados
 </h2>
 
 <div class="stats">
@@ -359,18 +422,18 @@ Resultados Reais
 </div>
 
 <div class="stat">
-<div class="stat-number">100%</div>
-<p>Acesso remoto</p>
-</div>
-
-<div class="stat">
 <div class="stat-number">IA</div>
-<p>Análise inteligente</p>
+<p>Visão computacional</p>
 </div>
 
 <div class="stat">
 <div class="stat-number">IoT</div>
 <p>Sensores conectados</p>
+</div>
+
+<div class="stat">
+<div class="stat-number">GPS</div>
+<p>Mapeamento inteligente</p>
 </div>
 
 </div>
@@ -380,14 +443,14 @@ Resultados Reais
 <footer class="footer">
 
 <h2>
-O futuro do Agro começa agora
+O Futuro do Agro Começa Agora
 </h2>
 
 <p>
-Tecnologia inteligente para aumentar produtividade, reduzir desperdícios e automatizar decisões agrícolas.
+Tecnologia inteligente para aumentar produtividade, automatizar operações e transformar dados em decisões estratégicas.
 </p>
 
-<a href="https://wa.me/5555999235620" class="whatsapp">
+<a href="https://wa.me/5555996294266" class="whatsapp">
 Falar no WhatsApp
 </a>
 
@@ -395,4 +458,4 @@ Falar no WhatsApp
 
 </body>
 </html>
-
+```
