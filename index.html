@@ -21,6 +21,100 @@ body{
   overflow-x:hidden;
 }
 
+/* PLATAFORMAS IOT */
+.iot-section{
+  background:#11161d;
+  border-top:1px solid #21262d;
+  border-bottom:1px solid #21262d;
+}
+
+.iot-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  margin-top:40px;
+}
+
+.iot-card{
+  background:#161b22;
+  border:1px solid #30363d;
+  border-radius:16px;
+  overflow:hidden;
+  width:340px;
+  transition:0.3s;
+}
+
+.iot-card:hover{
+  transform:translateY(-5px);
+  border-color:#4ea8de;
+}
+
+.iot-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+
+.iot-content{
+  padding:22px;
+}
+
+.iot-content h3{
+  font-size:26px;
+  margin-top:0;
+  margin-bottom:14px;
+}
+
+.iot-content p{
+  color:#8b949e;
+  line-height:1.6;
+  margin-bottom:22px;
+}
+
+.iot-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.iot-tag{
+  background:#0d1117;
+  border:1px solid #30363d;
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:13px;
+}
+
+.iot-btn{
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  padding:14px;
+  background:#238636;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  transition:0.3s;
+  box-sizing:border-box;
+}
+
+.iot-btn:hover{
+  background:#2ea043;
+}
+
+@media (max-width:768px){
+
+  .iot-card{
+    width:100%;
+    max-width:360px;
+  }
+
+}
+
+  
 /* MENU */
 .menu{
   position:sticky;
@@ -534,6 +628,121 @@ h2{
   </div>
 
 </section>
+
+<!-- PLATAFORMAS IOT -->
+<section class="container iot-section">
+
+  <h2>Plataformas IoT</h2>
+
+  <p class="sub">
+    Sistemas reais desenvolvidos pela ProtoNest para monitoramento,
+    automação e análise de dados em tempo real.
+  </p>
+
+  <div class="iot-grid">
+
+    <!-- ESTAÇÃO -->
+    <div class="iot-card">
+
+      <img src="estacao.jpg">
+
+      <div class="iot-content">
+
+        <h3>Estação Meteorológica Inteligente</h3>
+
+        <p>
+          Plataforma IoT para monitoramento climático em tempo real
+          aplicada ao agro e monitoramento ambiental.
+        </p>
+
+        <div class="iot-tags">
+          <div class="iot-tag">IoT</div>
+          <div class="iot-tag">ESP32</div>
+          <div class="iot-tag">Dashboard</div>
+          <div class="iot-tag">Tempo Real</div>
+        </div>
+
+        <a class="iot-btn"
+        href="https://est-met-render.onrender.com/ui/"
+        target="_blank">
+
+          Acessar Plataforma
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- DATACENTER -->
+    <div class="iot-card">
+
+      <img src="datacenter.jpg">
+
+      <div class="iot-content">
+
+        <h3>Monitor Inteligente de Ambientes</h3>
+
+        <p>
+          Monitoramento de temperatura crítica para servidores,
+          racks, datacenters e ambientes industriais.
+        </p>
+
+        <div class="iot-tags">
+          <div class="iot-tag">Alertas</div>
+          <div class="iot-tag">MQTT</div>
+          <div class="iot-tag">Monitoramento</div>
+          <div class="iot-tag">IoT</div>
+        </div>
+
+        <a class="iot-btn"
+        href="https://datacenter-monitor.onrender.com/ui/"
+        target="_blank">
+
+          Abrir Dashboard
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- IRRIGAÇÃO -->
+    <div class="iot-card">
+
+      <img src="irrigacao.jpg">
+
+      <div class="iot-content">
+
+        <h3>Irrigação Inteligente IoT</h3>
+
+        <p>
+          Sistema inteligente de irrigação e automação agrícola
+          com monitoramento remoto e controle em tempo real.
+        </p>
+
+        <div class="iot-tags">
+          <div class="iot-tag">Agro</div>
+          <div class="iot-tag">IoT</div>
+          <div class="iot-tag">Automação</div>
+          <div class="iot-tag">Em Breve</div>
+        </div>
+
+        <a class="iot-btn"
+        href="#">
+
+          Em Desenvolvimento
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  
 
 <!-- TECNOLOGIAS -->
 <section class="container" id="tecnologias">
