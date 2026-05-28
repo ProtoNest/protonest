@@ -1,461 +1,479 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VisuoAgro • Agricultura Inteligente</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>VisuoAgro | Agricultura Inteligente com IA e IoT</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-    background:#050816;
-    color:white;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0d1117;
+  color:#c9d1d9;
+  overflow-x:hidden;
 }
 
-/* ===== HERO ===== */
+/* MENU */
+
+.menu{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#161b22;
+  border-bottom:1px solid #30363d;
+}
+
+.menu-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px 20px;
+}
+
+.logo-menu{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.logo-menu img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.azul{
+  color:#4ea8de;
+}
+
+.verde{
+  color:#2ea043;
+}
+
+/* HERO */
 
 .hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:40px;
-    position:relative;
+  padding:90px 20px 70px;
+  text-align:center;
+
+  background:
+  linear-gradient(rgba(13,17,23,0.82), rgba(13,17,23,0.95)),
+  url("visuoagro-bg.jpg");
+
+  background-size:cover;
+  background-position:center;
 }
 
-.hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at top,#00ff8840,transparent 40%);
+.titulo{
+  font-size:3.1em;
+  font-weight:800;
+  line-height:1.2;
+  margin-bottom:20px;
 }
 
-.hero-content{
-    max-width:1100px;
-    position:relative;
-    z-index:2;
+.headline{
+  max-width:900px;
+  margin:auto;
+  font-size:1.3em;
+  line-height:1.7;
+  color:#c9d1d9;
 }
 
-.logo{
-    font-family:'Orbitron',sans-serif;
-    font-size:82px;
-    font-weight:900;
-    color:#00ff88;
-    margin-bottom:20px;
-    text-shadow:0 0 25px #00ff88;
-}
+.hero-botoes{
+  margin-top:40px;
 
-.subtitle{
-    font-size:28px;
-    color:#d6d6d6;
-    line-height:1.6;
-    margin-bottom:45px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    padding:18px 45px;
-    background:#00ff88;
-    color:#04110b;
-    text-decoration:none;
-    font-weight:700;
-    border-radius:14px;
-    font-size:18px;
-    transition:0.3s;
-    box-shadow:0 0 30px rgba(0,255,136,0.35);
+  display:inline-block;
+  padding:16px 30px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+  box-sizing:border-box;
 }
 
 .btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 50px rgba(0,255,136,0.55);
+  transform:translateY(-3px);
 }
 
-/* ===== SECTION ===== */
-
-.section{
-    padding:100px 8%;
+.btn-dashboard{
+  background:#238636;
+  color:white;
 }
 
-.section-title{
-    font-family:'Orbitron',sans-serif;
-    font-size:52px;
-    color:#00ff88;
-    margin-bottom:25px;
+.btn-dashboard:hover{
+  background:#2ea043;
 }
 
-.section-text{
-    color:#d0d0d0;
-    line-height:1.9;
-    font-size:20px;
-    max-width:1100px;
+.btn-site{
+  background:#21262d;
+  color:#c9d1d9;
+  border:1px solid #30363d;
 }
 
-/* ===== CARDS ===== */
+.btn-site:hover{
+  border-color:#4ea8de;
+  background:#30363d;
+}
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
-    margin-top:70px;
+.btn-whats{
+  background:#25D366;
+  color:white;
+}
+
+.btn-whats:hover{
+  filter:brightness(1.05);
+}
+
+/* CONTAINER */
+
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:70px 20px;
+  box-sizing:border-box;
+}
+
+/* TITULOS */
+
+h2{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:15px;
+}
+
+.sub{
+  text-align:center;
+  color:#8b949e;
+  font-size:18px;
+  line-height:1.6;
+  max-width:900px;
+  margin:auto auto 45px;
+}
+
+/* BLOCOS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
 .card{
-    background:#0b1328;
-    border:1px solid rgba(0,255,136,0.12);
-    border-radius:22px;
-    overflow:hidden;
-    transition:0.4s;
-    box-shadow:0 0 25px rgba(0,0,0,0.35);
+  background:#161b22;
+  border:1px solid #21262d;
+  border-radius:16px;
+  overflow:hidden;
+  transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 0 45px rgba(0,255,136,0.2);
+  transform:translateY(-5px);
+  border-color:#30363d;
 }
 
 .card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
+  width:100%;
+  height:220px;
+  object-fit:cover;
 }
 
 .card-content{
-    padding:30px;
+  padding:24px;
 }
 
-.card-title{
-    font-family:'Orbitron',sans-serif;
-    color:#00ff88;
-    font-size:28px;
-    margin-bottom:18px;
+.card h3{
+  font-size:24px;
+  margin-top:0;
+  margin-bottom:12px;
 }
 
-.card-text{
-    color:#d7d7d7;
-    line-height:1.8;
+.card p{
+  color:#8b949e;
+  line-height:1.6;
+  font-size:16px;
 }
 
-/* ===== FEATURES ===== */
+/* BENEFICIOS */
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-    margin-top:60px;
+.beneficios{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+  margin-top:40px;
 }
 
-.feature{
-    background:#09101f;
-    border:1px solid rgba(0,255,136,0.08);
-    border-radius:18px;
-    padding:30px;
-    transition:0.3s;
+.beneficio{
+  background:#161b22;
+  border:1px solid #30363d;
+  padding:14px 22px;
+  border-radius:30px;
+  font-size:15px;
 }
 
-.feature:hover{
-    transform:translateY(-5px);
-    border-color:#00ff88;
+/* CTA FINAL */
+
+.cta{
+  text-align:center;
+  background:#161b22;
+  border-top:1px solid #21262d;
+  padding:70px 20px;
 }
 
-.feature h3{
-    color:#00ff88;
-    margin-bottom:14px;
-    font-size:22px;
-    font-family:'Orbitron',sans-serif;
+.cta h2{
+  margin-top:0;
 }
 
-.feature p{
-    color:#d0d0d0;
-    line-height:1.7;
+.cta p{
+  color:#8b949e;
+  max-width:700px;
+  margin:20px auto 35px;
+  line-height:1.7;
 }
 
-/* ===== STATUS ===== */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    margin-top:60px;
-}
-
-.stat{
-    background:#09101f;
-    border-radius:20px;
-    border:1px solid rgba(0,255,136,0.08);
-    padding:35px;
-    text-align:center;
-}
-
-.stat-number{
-    font-size:52px;
-    font-weight:900;
-    color:#00ff88;
-    font-family:'Orbitron',sans-serif;
-    margin-bottom:12px;
-    text-shadow:0 0 18px rgba(0,255,136,0.35);
-}
-
-.stat p{
-    color:#d0d0d0;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 .footer{
-    background:#03060f;
+  text-align:center;
+  padding:35px 20px;
+  border-top:1px solid #21262d;
+  color:#8b949e;
+  font-size:14px;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+  .titulo{
+    font-size:2.2em;
+  }
+
+  .headline{
+    font-size:1.05em;
+  }
+
+  .hero{
+    padding:70px 20px 60px;
+  }
+
+  .hero-botoes{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn{
+    width:100%;
+    max-width:340px;
     text-align:center;
-    padding:80px 20px;
-    border-top:1px solid rgba(0,255,136,0.1);
-}
+  }
 
-.footer h2{
-    font-family:'Orbitron',sans-serif;
-    color:#00ff88;
-    font-size:48px;
-    margin-bottom:20px;
-}
+  h2{
+    font-size:28px;
+  }
 
-.footer p{
-    color:#cfcfcf;
-    font-size:20px;
-    margin-bottom:35px;
-}
-
-.whatsapp{
-    display:inline-block;
-    background:#00ff88;
-    color:#04110b;
-    padding:18px 38px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.3s;
-    box-shadow:0 0 35px rgba(0,255,136,0.35);
-}
-
-.whatsapp:hover{
-    transform:translateY(-5px);
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:768px){
-
-.logo{
-    font-size:52px;
-}
-
-.subtitle{
-    font-size:22px;
-}
-
-.section-title{
-    font-size:38px;
-}
+  .sub{
+    font-size:16px;
+  }
 
 }
 
 </style>
 </head>
+
 <body>
+
+<!-- MENU -->
+
+<div class="menu">
+
+  <div class="menu-container">
+
+    <div class="logo-menu">
+
+      <img src="ProtoNest.png">
+
+      <div>
+        <span class="azul">ProtoNest</span>
+        <span class="verde">Automação</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-content">
+  <h1 class="titulo">
+    VisuoAgro<br>
+    Agricultura Inteligente com IA e IoT
+  </h1>
 
-<h1 class="logo">
-VISUOAGRO
-</h1>
+  <p class="headline">
+    Plataforma desenvolvida para transformar dados do campo
+    em decisões inteligentes através de sensores,
+    inteligência artificial, automação e monitoramento remoto.
+  </p>
 
-<p class="subtitle">
-Plataforma Inteligente de Agricultura de Precisão.<br>
-IoT, Inteligência Artificial, Automação Agrícola e Monitoramento em Tempo Real.
-</p>
+  <div class="hero-botoes">
 
-<a href="https://wa.me/5555996294266" class="btn">
-Solicitar Demonstração
-</a>
+    <a class="btn btn-dashboard"
+    href="#">
+      Abrir Dashboard
+    </a>
 
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-Tecnologia Inteligente para o Agro
-</h2>
-
-<p class="section-text">
-O VisuoAgro transforma sensores, clima, irrigação e Inteligência Artificial em decisões estratégicas para o produtor rural. Monitoramento contínuo, automação inteligente e análise em tempo real da lavoura em uma única plataforma.
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200">
-
-<div class="card-content">
-
-<h3 class="card-title">
-Dashboard Inteligente
-</h3>
-
-<p class="card-text">
-Visualização completa de sensores climáticos, umidade do solo, irrigação, alertas críticos, mapas inteligentes e análise histórica da propriedade.
-</p>
-
-</div>
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200">
-
-<div class="card-content">
-
-<h3 class="card-title">
-Estufas Inteligentes
-</h3>
-
-<p class="card-text">
-Controle automatizado de ventilação, temperatura, iluminação, irrigação e nebulização para ambientes agrícolas protegidos e produção indoor.
-</p>
-
-</div>
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200">
-
-<div class="card-content">
-
-<h3 class="card-title">
-Irrigação Inteligente
-</h3>
-
-<p class="card-text">
-Automação de bombas e válvulas baseada em umidade do solo, clima e previsão meteorológica, reduzindo desperdícios e aumentando eficiência.
-</p>
-
-</div>
-</div>
-
-</div>
+  </div>
 
 </section>
 
-<section class="section">
+<!-- SOBRE -->
 
-<h2 class="section-title">
-Módulos Inteligentes
-</h2>
+<section class="container">
 
-<div class="features">
+  <h2>Tecnologia Inteligente para o Agro Moderno</h2>
 
-<div class="feature">
-<h3>🌦 Central Climática</h3>
-<p>Temperatura, umidade, vento, chuva, pressão atmosférica e radiação solar em tempo real.</p>
-</div>
+  <p class="sub">
+    O VisuoAgro integra sensores climáticos,
+    monitoramento de solo, irrigação inteligente,
+    visão computacional com IA e automação agrícola
+    em uma única plataforma acessível de qualquer lugar.
+  </p>
 
-<div class="feature">
-<h3>🌱 Sensores de Solo</h3>
-<p>Monitoramento inteligente de umidade, fertilidade, pH e condutividade do solo.</p>
-</div>
+  <div class="grid">
 
-<div class="feature">
-<h3>🤖 Inteligência Artificial</h3>
-<p>Detecção de pragas, falhas de plantio e estresse hídrico através de visão computacional.</p>
-</div>
+    <div class="card">
 
-<div class="feature">
-<h3>💧 Irrigação Automatizada</h3>
-<p>Controle inteligente baseado em dados reais do ambiente agrícola.</p>
-</div>
+      <img src="visuoagro1.jpg">
 
-<div class="feature">
-<h3>📊 Dashboard Web</h3>
-<p>Acesso remoto via celular ou computador com gráficos, alertas e relatórios automáticos.</p>
-</div>
+      <div class="card-content">
 
-<div class="feature">
-<h3>⚡ Automação Agrícola</h3>
-<p>Controle automático de bombas, válvulas, ventilação, iluminação e estufas.</p>
-</div>
+        <h3>Dashboard Inteligente</h3>
 
-</div>
+        <p>
+          Visualize temperatura, umidade,
+          chuva, vento, solo e dados da lavoura
+          em tempo real através de dashboards
+          inteligentes com acesso remoto.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="estufa.jpg">
+
+      <div class="card-content">
+
+        <h3>Estufas Inteligentes</h3>
+
+        <p>
+          Controle automático de ventilação,
+          irrigação, temperatura e umidade
+          para estufas agrícolas e plantio vertical.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="irrigacao.jpg">
+
+      <div class="card-content">
+
+        <h3>Irrigação Inteligente</h3>
+
+        <p>
+          Sistema inteligente de irrigação baseado
+          em sensores, previsão climática,
+          umidade do solo e automação em tempo real.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="beneficios">
+
+    <div class="beneficio">Monitoramento 24h</div>
+    <div class="beneficio">IA para Agricultura</div>
+    <div class="beneficio">Sensores IoT</div>
+    <div class="beneficio">Irrigação Inteligente</div>
+    <div class="beneficio">Automação Agrícola</div>
+    <div class="beneficio">Alertas Inteligentes</div>
+    <div class="beneficio">Plantio Vertical</div>
+    <div class="beneficio">Monitoramento Climático</div>
+
+  </div>
 
 </section>
 
-<section class="section">
+<!-- CTA FINAL -->
 
-<h2 class="section-title">
-Agricultura Orientada por Dados
-</h2>
+<section class="cta">
 
-<div class="stats">
+  <h2>Conheça o VisuoAgro</h2>
 
-<div class="stat">
-<div class="stat-number">24h</div>
-<p>Monitoramento contínuo</p>
-</div>
+  <p>
+    Descubra como a ProtoNest está transformando
+    o agronegócio com inteligência artificial,
+    automação e monitoramento inteligente
+    para lavouras, irrigação e agricultura de precisão.
+  </p>
 
-<div class="stat">
-<div class="stat-number">IA</div>
-<p>Visão computacional</p>
-</div>
+  <div class="hero-botoes">
 
-<div class="stat">
-<div class="stat-number">IoT</div>
-<p>Sensores conectados</p>
-</div>
+    <a class="btn btn-dashboard"
+    href="#">
+      Abrir Dashboard
+    </a>
 
-<div class="stat">
-<div class="stat-number">GPS</div>
-<p>Mapeamento inteligente</p>
-</div>
+    <a class="btn btn-site"
+    href="index.html">
+      Voltar ao Site Principal
+    </a>
 
-</div>
+    <a class="btn btn-whats"
+    href="https://wa.me/5555996294266">
+      Falar no WhatsApp
+    </a>
+
+  </div>
 
 </section>
 
-<footer class="footer">
+<!-- FOOTER -->
 
-<h2>
-O Futuro do Agro Começa Agora
-</h2>
-
-<p>
-Tecnologia inteligente para aumentar produtividade, automatizar operações e transformar dados em decisões estratégicas.
-</p>
-
-<a href="https://wa.me/5555996294266" class="whatsapp">
-Falar no WhatsApp
-</a>
-
-</footer>
+<div class="footer">
+  © ProtoNest Automação — VisuoAgro Plataforma Inteligente para o Agro
+</div>
 
 </body>
 </html>
-```
