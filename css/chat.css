@@ -164,30 +164,62 @@ background:#2ea043;
 @media (max-width:768px){
 
 .chat-window{
+position:fixed;
+
 top:0;
 left:0;
-right:0;
-bottom:0;
 
-width:100%;
-height:100%;
+width:100vw;
+height:100dvh;
 
-max-width:none;
 border-radius:0;
+max-width:none;
+
+display:none;
+flex-direction:column;
 }
 
 .chat-header{
-border-radius:0;
+flex-shrink:0;
 }
 
 .chat-messages{
+flex:1;
+overflow-y:auto;
+
 padding:15px;
-padding-bottom:80px;
+
+padding-bottom:20px;
+
+-webkit-overflow-scrolling:touch;
 }
 
 .chat-input{
+flex-shrink:0;
+
 position:sticky;
 bottom:0;
+
+background:#161b22;
+
+padding-bottom:env(safe-area-inset-bottom);
+}
+
+/* CONSULTOR */
+.chat-btn{
+width:52px;
+height:52px;
+
+padding:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+right:20px;
+bottom:85px;
 }
 
 .desktop-chat{
@@ -196,21 +228,6 @@ display:none;
 
 .mobile-chat{
 display:block;
-}
-
-/* CONSULTOR ACIMA DO WHATSAPP */
-.chat-btn{
-width:52px;
-height:52px;
-
-padding:0;
-
-border-radius:50%;
-
-justify-content:center;
-
-bottom:85px;
-right:20px;
 }
 
 .opcao-btn{
