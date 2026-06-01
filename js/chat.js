@@ -226,22 +226,25 @@ function calcularScore(){
 
 let score = 0;
 
-if(lead.urgencia.includes("Urgente"))
+const urgencia = lead.urgencia.toLowerCase();
+const potencial = lead.potencial.toLowerCase();
+
+if(urgencia.includes("urgente"))
 score += 50;
 
-if(lead.urgencia.includes("Semanas"))
+else if(urgencia.includes("seman"))
 score += 30;
 
-if(lead.urgencia.includes("Meses"))
+else if(urgencia.includes("mes"))
 score += 15;
 
-if(lead.potencial.includes("Grande"))
+if(potencial.includes("grande"))
 score += 50;
 
-if(lead.potencial.includes("Médio"))
+else if(potencial.includes("médio") || potencial.includes("medio"))
 score += 30;
 
-if(lead.potencial.includes("Pequeno"))
+else if(potencial.includes("pequeno"))
 score += 10;
 
 return score;
