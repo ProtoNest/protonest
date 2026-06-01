@@ -28,9 +28,7 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGbXj0yuCjQoc6ytfdQ
 const campos = [
 "nome",
 "empresa",
-"cidade",
 "whatsapp",
-"email",
 "categoria",
 "necessidade",
 "urgencia",
@@ -40,9 +38,7 @@ const campos = [
 const perguntas = {
 nome:"Olá, seja bem-vindo à Protonest Automação. Qual seu nome?",
 empresa:"Qual o nome da empresa?",
-cidade:"Qual sua cidade?",
 whatsapp:"Qual seu WhatsApp?",
-email:"Qual seu e-mail? (Opcional)",
 categoria:"Qual a categoria da necessidade?",
 necessidade:"Conte um pouco mais sobre sua necessidade.",
 urgencia:"Qual a urgência? (pesquisando, meses, semanas, urgente)",
