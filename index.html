@@ -340,14 +340,21 @@ h2{
   position:fixed;
   bottom:20px;
   right:20px;
+  width:60px;
+  height:60px;
   background:#25D366;
-  color:white;
-  padding:16px 22px;
-  border-radius:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-decoration:none;
-  font-weight:bold;
   box-shadow:0 0 20px rgba(37,211,102,0.3);
   z-index:999;
+}
+
+.whats-fixo i{
+  color:white;
+  font-size:32px;
 }
 
 /* FOOTER */
@@ -462,16 +469,15 @@ h2{
     padding:10px 16px;
   }
 
-  .whats-fixo{
-    bottom:15px;
-    right:15px;
-    padding:14px 18px;
-    font-size:14px;
-  }
+  
 
 }
 
 </style>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+  
 </head>
 
 <body>
@@ -779,8 +785,12 @@ h2{
 </div>
 
 <!-- WHATS -->
-<a class="whats-fixo" href="https://wa.me/5555996294266">
-  WhatsApp
+<<a class="whats-fixo"
+href="https://wa.me/5555996294266"
+target="_blank">
+
+  <i class="fab fa-whatsapp"></i>
+
 </a>
 
 <!-- MOBILE CLICK -->
