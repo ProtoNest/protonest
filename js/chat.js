@@ -1,3 +1,13 @@
+const categorias = [
+"Automação Industrial",
+"IoT",
+"Assistência Técnica",
+"IA e Visão Computacional",
+"MVP e Prototipagem",
+"Outros"
+];
+
+
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGbXj0yuCjQoc6ytfdQsHDdTT3KwZ6f2k2F5np1f83M6wMEfzwfRpSA1ytNZhE2miu8Q/exec";
 
 const campos = [
@@ -59,6 +69,12 @@ document.body.insertAdjacentHTML("beforeend",`
 const btn=document.querySelector(".chat-btn");
 const janela=document.querySelector(".chat-window");
 const mensagens=document.querySelector(".chat-messages");
+const fechar = document.querySelector(".chat-close");
+
+fechar.onclick = () => {
+janela.style.display = "none";
+};
+
 
 btn.onclick=()=>{
 
