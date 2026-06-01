@@ -189,4 +189,13 @@ display:block;
 }
 
 }
+.chat-window{
+box-sizing:border-box;
+}
+@media (max-width:768px){
 
+.chat-messages{
+padding-bottom:80px;
+}
+
+}
