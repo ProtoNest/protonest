@@ -154,8 +154,9 @@ bot("Obrigado. Gerando resumo...");
 
 await fetch(SCRIPT_URL,{
 method:"POST",
+mode:"no-cors",
 headers:{
-"Content-Type":"application/json"
+"Content-Type":"text/plain"
 },
 body:JSON.stringify(lead)
 });
