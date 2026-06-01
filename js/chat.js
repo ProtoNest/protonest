@@ -56,7 +56,19 @@ document.body.insertAdjacentHTML("beforeend",`
 
 <div class="chat-overlay"></div>
 
-<div class="chat-btn">💬</div>
+
+<div class="chat-btn">
+
+<span class="desktop-chat">
+💬 Consultor
+</span>
+
+<span class="mobile-chat">
+💬
+</span>
+
+</div>
+
 
 <div class="chat-window">
 
