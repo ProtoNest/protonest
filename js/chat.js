@@ -211,25 +211,25 @@ finalizar();
 
 function calcularScore(){
 
-let score=0;
+let score = 0;
 
-if(lead.urgencia.toLowerCase().includes("urgente"))
-score+=30;
+if(lead.urgencia.includes("Urgente"))
+score += 50;
 
-if(lead.urgencia.toLowerCase().includes("semana"))
-score+=20;
+if(lead.urgencia.includes("Semanas"))
+score += 30;
 
-if(lead.urgencia.toLowerCase().includes("mes"))
-score+=10;
+if(lead.urgencia.includes("Meses"))
+score += 15;
 
-if(lead.potencial.toLowerCase().includes("grande"))
-score+=40;
+if(lead.potencial.includes("Grande"))
+score += 50;
 
-if(lead.potencial.toLowerCase().includes("médio"))
-score+=20;
+if(lead.potencial.includes("Médio"))
+score += 30;
 
-if(lead.potencial.toLowerCase().includes("pequeno"))
-score+=10;
+if(lead.potencial.includes("Pequeno"))
+score += 10;
 
 return score;
 
@@ -237,13 +237,13 @@ return score;
 
 function classificar(score){
 
-if(score<=25) return "Gelado";
-
-if(score<=50) return "Frio";
-
-if(score<=75) return "Morno";
-
+if(score >= 80)
 return "Quente";
+
+if(score >= 50)
+return "Morno";
+
+return "Frio";
 
 }
 
@@ -265,19 +265,14 @@ body:JSON.stringify(lead)
 });
 
 bot(`
-Resumo:
+✅ Solicitação recebida com sucesso.
+Obrigado pelas informações. Sr(a): 
+${lead.nome}, ${lead.empresa}
 
-Nome: ${lead.nome}
+Nossa equipe analisará sua necessidade e entrará em contato em breve através dos canais informados.
 
-Empresa: ${lead.empresa}
-
-Categoria: ${lead.categoria}
-
-Classificação: ${lead.classificacao}
-
-Score: ${lead.score}
-
-Nossa equipe entrará em contato em breve.
+ProtoNest Automação
+Soluções Inteligentes para Indústria e Agro.
 `);
 
 }
