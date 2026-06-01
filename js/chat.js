@@ -294,5 +294,16 @@ Soluções Inteligentes para Indústria e Agro.
 `);
 
 }
+const input = document.getElementById("chatInput");
+
+input.addEventListener("focus", () => {
+
+  setTimeout(() => {
+
+    mensagens.scrollTop = mensagens.scrollHeight;
+
+  }, 300);
+
+});
 
 
