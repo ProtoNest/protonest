@@ -54,11 +54,11 @@ let lead = {};
 
 document.body.insertAdjacentHTML("beforeend",`
 
-<div class="chat-btn">💬 Consultor Técnico</div>
+<div class="chat-overlay"></div>
+
+<div class="chat-btn">💬 Consultor</div>
 
 <div class="chat-window">
-
-
 
 <div class="chat-header">
 
@@ -67,8 +67,6 @@ document.body.insertAdjacentHTML("beforeend",`
 <span class="chat-close">✖</span>
 
 </div>
-
-
 
 <div class="chat-messages"></div>
 
@@ -85,9 +83,11 @@ const btn=document.querySelector(".chat-btn");
 const janela=document.querySelector(".chat-window");
 const mensagens=document.querySelector(".chat-messages");
 const fechar = document.querySelector(".chat-close");
+const overlay = document.querySelector(".chat-overlay");
 
 fechar.onclick = () => {
 
+overlay.style.display = "none";
 janela.style.display = "none";
 
 etapa = 0;
@@ -100,6 +100,7 @@ mensagens.innerHTML = "";
 
 btn.onclick=()=>{
 
+overlay.style.display="block";
 janela.style.display="flex";
 
 if(mensagens.innerHTML===""){
