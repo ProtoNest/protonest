@@ -1,3 +1,18 @@
+const potenciais = [
+"Pequeno",
+"Médio",
+"Grande"
+];
+
+
+const urgencias = [
+"🔵 Pesquisando",
+"🟢 Próximos meses",
+"🟡 Próximas semanas",
+"🔴 Urgente"
+];
+
+
 const categorias = [
 "Automação Industrial",
 "IoT",
@@ -96,6 +111,38 @@ mensagens.innerHTML+=`<div class="user">${msg}</div>`;
 mensagens.scrollTop=mensagens.scrollHeight;
 }
 
+function mostrarBotoes(lista){
+
+let html = '<div class="opcoes">';
+
+lista.forEach(item => {
+
+html += `
+<button class="opcao-btn">
+${item}
+</button>
+`;
+
+});
+
+html += '</div>';
+
+mensagens.innerHTML += html;
+
+document.querySelectorAll(".opcao-btn").forEach(btn=>{
+
+btn.onclick=()=>{
+
+document.getElementById("chatInput").value =
+btn.innerText;
+
+enviar();
+
+};
+
+});
+
+}
 document.getElementById("sendBtn").onclick=enviar;
 
 document.getElementById("chatInput").addEventListener("keypress",e=>{
@@ -121,6 +168,27 @@ etapa++;
 if(etapa<campos.length){
 
 bot(perguntas[campos[etapa]]);
+
+if(campos[etapa] === "categoria"){
+
+mostrarBotoes(categorias);
+
+}
+
+if(campos[etapa] === "urgencia"){
+
+mostrarBotoes(urgencias);
+
+}
+
+if(campos[etapa] === "potencial"){
+
+mostrarBotoes(potenciais);
+
+}
+  
+  
+
 
 }else{
 
