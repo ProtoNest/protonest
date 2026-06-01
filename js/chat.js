@@ -87,7 +87,14 @@ const mensagens=document.querySelector(".chat-messages");
 const fechar = document.querySelector(".chat-close");
 
 fechar.onclick = () => {
+
 janela.style.display = "none";
+
+etapa = 0;
+lead = {};
+
+mensagens.innerHTML = "";
+
 };
 
 
@@ -132,6 +139,10 @@ mensagens.innerHTML += html;
 document.querySelectorAll(".opcao-btn").forEach(btn=>{
 
 btn.onclick=()=>{
+
+document.querySelectorAll(".opcoes").forEach(op=>{
+op.remove();
+});
 
 document.getElementById("chatInput").value =
 btn.innerText;
@@ -214,7 +225,7 @@ score+=10;
 if(lead.potencial.toLowerCase().includes("grande"))
 score+=40;
 
-if(lead.potencial.toLowerCase().includes("medio"))
+if(lead.potencial.toLowerCase().includes("médio"))
 score+=20;
 
 if(lead.potencial.toLowerCase().includes("pequeno"))
