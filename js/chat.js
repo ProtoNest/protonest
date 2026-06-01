@@ -33,9 +33,17 @@ document.body.insertAdjacentHTML("beforeend",`
 
 <div class="chat-window">
 
+
+
 <div class="chat-header">
-ProtoNest Automação
+
+<span>ProtoNest Automação</span>
+
+<span class="chat-close">✖</span>
+
 </div>
+
+
 
 <div class="chat-messages"></div>
 
