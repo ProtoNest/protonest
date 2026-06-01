@@ -197,7 +197,7 @@ padding-bottom:20px;
 .chat-input{
 flex-shrink:0;
 
-position:sticky;
+position:relative;
 bottom:0;
 
 background:#161b22;
