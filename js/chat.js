@@ -60,11 +60,11 @@ document.body.insertAdjacentHTML("beforeend",`
 <div class="chat-btn">
 
 <span class="desktop-chat">
-💬 Consultor
+✨ Consultor
 </span>
 
 <span class="mobile-chat">
-💬
+✨
 </span>
 
 </div>
