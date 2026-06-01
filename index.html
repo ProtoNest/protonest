@@ -22,16 +22,13 @@ body{
 }
 
 /* PLATAFORMAS IOT */
-.iot-section{
-  background:transparent;
-}
+
 
 .iot-grid{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:25px;
-  margin-top:40px;
 }
 
 .iot-card{
@@ -40,63 +37,68 @@ body{
   border-radius:14px;
   width:280px;
   border:1px solid #21262d;
-  box-sizing:border-box;
+
+  display:flex;
+  flex-direction:column;
+
+  transition:0.3s;
 }
 
 .iot-card:hover{
   transform:translateY(-5px);
-  border-color:#4ea8de;
+  border-color:#30363d;
 }
 
 .iot-card img{
   width:100%;
-  height:190px;
+  height:170px;
   object-fit:cover;
+  border-radius:10px;
 }
 
 .iot-content{
-  padding:22px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
 
 .iot-content h3{
-  font-size:26px;
-  margin-top:0;
-  margin-bottom:14px;
+  font-size:24px;
+  margin-top:18px;
+  margin-bottom:12px;
 }
 
 .iot-content p{
   color:#8b949e;
-  line-height:1.6;
-  margin-bottom:22px;
+  line-height:1.5;
+  flex:1;
 }
 
 .iot-tags{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:22px;
+  gap:8px;
+  margin:15px 0;
 }
 
 .iot-tag{
   background:#0d1117;
   border:1px solid #30363d;
-  padding:8px 12px;
-  border-radius:30px;
-  font-size:13px;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:12px;
 }
 
 .iot-btn{
-  display:inline-block;
-  width:100%;
+  display:block;
   text-align:center;
   padding:14px;
   background:#238636;
   color:white;
   text-decoration:none;
-  border-radius:10px;
+  border-radius:8px;
   font-weight:bold;
-  transition:0.3s;
-  box-sizing:border-box;
+  margin-top:auto;
 }
 
 .iot-btn:hover{
@@ -629,7 +631,7 @@ h2{
 </section>
 
 <!-- PLATAFORMAS IOT -->
-<section class="container iot-section" id="plataformas">
+<section class="container" id="plataformas">
 
   <h2>Plataformas IoT</h2>
 
