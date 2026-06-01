@@ -1,3 +1,21 @@
+.chat-header{
+padding:15px;
+background:#238636;
+color:white;
+font-weight:bold;
+border-radius:12px 12px 0 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.chat-close{
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+}
+
+
 .chat-btn{
 position:fixed;
 bottom:90px;
