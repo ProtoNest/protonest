@@ -264,12 +264,14 @@ return "Frio";
 }
 
 async function finalizar(){
-
+lead.dataHora =
+new Date().toLocaleString("pt-BR");
+  
 lead.score=calcularScore();
 
 lead.classificacao=classificar(lead.score);
 
-bot("Obrigado. Gerando resumo...");
+bot("Obrigado. Analisando...");
 
 await fetch(SCRIPT_URL,{
 method:"POST",
@@ -283,7 +285,7 @@ body:JSON.stringify(lead)
 bot(`
 ✅ Solicitação recebida com sucesso.
 Obrigado pelas informações. Sr(a): 
-${lead.nome}, ${lead.empresa}
+${lead.nome}.
 
 Nossa equipe analisará sua necessidade e entrará em contato em breve através dos canais informados.
 
