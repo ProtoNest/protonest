@@ -122,13 +122,13 @@ bot(perguntas.nome);
 };
 
 function bot(msg){
-mensagens.innerHTML+=`<div class="bot">${msg}</div>`;
-mensagens.scrollTop=mensagens.scrollHeight;
+mensagens.innerHTML += `<div class="bot">${msg}</div>`;
+mensagens.scrollTop = mensagens.scrollHeight;
 }
 
 function user(msg){
-mensagens.innerHTML+=`<div class="user">${msg}</div>`;
-mensagens.scrollTop=mensagens.scrollHeight;
+mensagens.innerHTML += `<div class="user">${msg}</div>`;
+mensagens.scrollTop = mensagens.scrollHeight;
 }
 
 function mostrarBotoes(lista){
@@ -295,3 +295,15 @@ Soluções Inteligentes para Indústria e Agro.
 
 }
 
+const input = document.getElementById("chatInput");
+
+input.addEventListener("focus", () => {
+
+setTimeout(() => {
+
+mensagens.scrollTop =
+mensagens.scrollHeight;
+
+}, 300);
+
+});
