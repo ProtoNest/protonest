@@ -170,3 +170,23 @@ padding:10px 12px;
 }
 
 }
+.mobile-chat{
+display:none;
+}
+
+.desktop-chat{
+display:block;
+}
+
+@media (max-width:768px){
+
+.desktop-chat{
+display:none;
+}
+
+.mobile-chat{
+display:block;
+}
+
+}
+
