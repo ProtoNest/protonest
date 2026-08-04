@@ -307,10 +307,36 @@
       border-radius: 60px;
       transition: 0.2s;
       box-shadow: 0 0 20px rgba(37, 211, 102, 0.25);
+      margin: 0 10px 10px 0;
     }
     .btn-whats:hover {
       transform: scale(1.03);
       background: #20b85f;
+    }
+
+    /* BOTÃO DASHBOARD (NOVO) */
+    .btn-demo {
+      display: inline-block;
+      background: #1f6feb;
+      color: #fff;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 18px 50px;
+      border-radius: 60px;
+      transition: 0.2s;
+      box-shadow: 0 0 20px rgba(31, 111, 235, 0.25);
+      margin: 0 10px 10px 0;
+    }
+    .btn-demo:hover {
+      transform: scale(1.03);
+      background: #1855b8;
+    }
+
+    .botoes-cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
 
     /* ===== SLOGAN RODAPÉ ===== */
@@ -398,9 +424,15 @@
       .cta-gigante h2 {
         font-size: 28px;
       }
-      .btn-whats {
+      .btn-whats, .btn-demo {
         font-size: 18px;
         padding: 16px 30px;
+        width: 100%;
+        margin: 4px 0;
+      }
+      .botoes-cta {
+        flex-direction: column;
+        align-items: center;
       }
       .slogan-footer {
         font-size: 17px;
@@ -464,7 +496,7 @@
       </div>
     </div>
     <div class="ilustra">
-      <img src="servicos.jpg" alt="Dashboard industrial" style="width:100%; max-width:340px;">
+      <img src="energia2.png" alt="Dashboard industrial" style="width:100%; max-width:340px;">
     </div>
   </div>
 
@@ -527,7 +559,17 @@
   <div class="cta-gigante">
     <h2>Descubra quanto sua empresa pode economizar.</h2>
     <p>Solicite uma demonstração.</p>
-    <a href="https://wa.me/5555996294266" class="btn-whats">📲 Fale com um especialista</a>
+
+    <div class="botoes-cta">
+      <a href="https://wa.me/5555996294266" class="btn-whats">📲 Fale com um especialista</a>
+      <!-- NOVO BOTÃO PARA O DASHBOARD -->
+      <a href="https://platform-iot.onrender.com/ui/#!/3?socketid=2NGQw09QgIQxIRBiAAAW" target="_blank" class="btn-demo">
+        🚀 Ver dashboard em ação
+      </a>
+    </div>
+    <p style="font-size:14px; color:#8b949e; margin-top:16px;">
+      Acompanhe dados de energia, máquinas, ambiente e produção em tempo real.
+    </p>
   </div>
 
   <!-- SLOGAN RODAPÉ -->
