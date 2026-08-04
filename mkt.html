@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProtoNest · Transformamos dados em decisões</title>
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ===== MENU ===== */
+    .menu {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .menu-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+    }
+
+    .logo-menu {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .azul { color: #4ea8de; }
+    .verde { color: #2ea043; }
+
+    .menu-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .menu-links a {
+      color: #c9d1d9;
+      font-size: 15px;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+    .menu-links a:hover {
+      color: #58a6ff;
+    }
+
+    /* ===== TÍTULOS ===== */
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      text-align: center;
+      margin: 30px 0 12px;
+      line-height: 1.2;
+    }
+    .sub {
+      text-align: center;
+      color: #8b949e;
+      font-size: 19px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    /* ===== SLOGAN (destaque) ===== */
+    .slogan-badge {
+      display: inline-block;
+      background: #1f2a3a;
+      color: #58a6ff;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      margin-bottom: 20px;
+      border: 1px solid #30363d;
+    }
+
+    /* ===== BLOCOS ===== */
+    .bloco-principal {
+      background: #161b22;
+      border-radius: 20px;
+      border: 1px solid #21262d;
+      padding: 40px 35px;
+      margin: 30px 0 50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .bloco-principal .texto {
+      flex: 1 1 300px;
+    }
+    .bloco-principal .ilustra {
+      flex: 1 1 280px;
+      text-align: center;
+    }
+    .bloco-principal .ilustra img {
+      max-width: 100%;
+      border-radius: 14px;
+      border: 1px solid #30363d;
+    }
+
+    .lista-destaque ul {
+      list-style: none;
+      padding: 0;
+    }
+    .lista-destaque li {
+      font-size: 18px;
+      padding: 8px 0 8px 32px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%232ea043" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+      background-size: 20px;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    /* ===== CARDS ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 28px;
+      margin: 50px 0 60px;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 18px;
+      padding: 28px 24px 30px;
+      transition: 0.25s;
+    }
+    .card:hover {
+      border-color: #4ea8de;
+      transform: translateY(-4px);
+    }
+    .card .emoji {
+      font-size: 36px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #8b949e;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ===== SEÇÃO "O QUE FAZEMOS" ===== */
+    .secao-tags {
+      background: #161b22;
+      border-radius: 20px;
+      border: 1px solid #21262d;
+      padding: 40px 35px;
+      margin: 40px 0 50px;
+    }
+    .secao-tags h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #f0f6fc;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+    }
+    .tags span {
+      background: #1c2333;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 16px;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      font-weight: 500;
+    }
+    .tags span::before {
+      content: "✔ ";
+      color: #2ea043;
+      font-weight: 700;
+    }
+
+    /* ===== COMO FUNCIONA ===== */
+    .passos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px 10px;
+      margin: 30px 0 50px;
+      counter-reset: step;
+    }
+    .passo {
+      flex: 1 1 180px;
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 16px;
+      padding: 24px 18px;
+      text-align: center;
+      position: relative;
+    }
+    .passo::before {
+      counter-increment: step;
+      content: counter(step);
+      background: #2ea043;
+      color: #0d1117;
+      font-weight: 700;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .passo p {
+      font-size: 16px;
+      color: #c9d1d9;
+      font-weight: 500;
+    }
+    .passo .sub-pass {
+      color: #8b949e;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+
+    /* ===== APLICAÇÕES ===== */
+    .aplicacoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 22px;
+      justify-content: center;
+      background: #161b22;
+      border-radius: 20px;
+      border: 1px solid #21262d;
+      padding: 32px 30px;
+      margin: 40px 0 50px;
+    }
+    .aplicacoes span {
+      background: #1c2333;
+      padding: 6px 22px;
+      border-radius: 40px;
+      font-size: 17px;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      font-weight: 500;
+    }
+
+    /* ===== CTA GIGANTE ===== */
+    .cta-gigante {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 24px;
+      padding: 50px 30px;
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+    .cta-gigante h2 {
+      font-size: 38px;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 12px;
+    }
+    .cta-gigante p {
+      font-size: 20px;
+      color: #8b949e;
+      margin-bottom: 28px;
+    }
+    .btn-whats {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 18px 50px;
+      border-radius: 60px;
+      transition: 0.2s;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.25);
+    }
+    .btn-whats:hover {
+      transform: scale(1.03);
+      background: #20b85f;
+    }
+
+    /* ===== SLOGAN RODAPÉ ===== */
+    .slogan-footer {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: #8b949e;
+      border-top: 1px solid #21262d;
+      padding: 40px 10px 20px;
+      margin-top: 40px;
+      letter-spacing: 0.3px;
+    }
+    .slogan-footer strong {
+      color: #f0f6fc;
+    }
+
+    /* ===== WHATSAPP FIXO ===== */
+    .whats-fixo {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 0 24px rgba(37, 211, 102, 0.35);
+      z-index: 999;
+      font-size: 16px;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .whats-fixo:hover {
+      transform: scale(1.04);
+      background: #20b85f;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      .menu-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 16px;
+      }
+      .menu-links {
+        gap: 16px;
+        justify-content: center;
+      }
+      .menu-links a {
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      .sub {
+        font-size: 17px;
+      }
+      .bloco-principal {
+        padding: 28px 18px;
+        gap: 24px;
+      }
+      .lista-destaque li {
+        font-size: 16px;
+        padding-left: 28px;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .secao-tags {
+        padding: 28px 18px;
+      }
+      .tags span {
+        font-size: 14px;
+      }
+      .passos {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .passo {
+        flex: 1 1 auto;
+      }
+      .cta-gigante h2 {
+        font-size: 28px;
+      }
+      .btn-whats {
+        font-size: 18px;
+        padding: 16px 30px;
+      }
+      .slogan-footer {
+        font-size: 17px;
+      }
+      .whats-fixo {
+        padding: 14px 18px;
+        font-size: 14px;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== MENU ===== -->
+<div class="menu">
+  <div class="menu-container">
+    <div class="logo-menu">
+      <span class="azul">ProtoNest</span><span class="verde">·</span>
+    </div>
+    <div class="menu-links">
+      <a href="#">Início</a>
+      <a href="#">Soluções</a>
+      <a href="#">Aplicações</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTEÚDO ===== -->
+<div class="container">
+
+  <!-- SLOGAN DESTAQUE -->
+  <div style="text-align:center; margin-top:10px;">
+    <span class="slogan-badge">⚡ Transformamos dados industriais em decisões inteligentes</span>
+  </div>
+
+  <!-- TÍTULO PRINCIPAL -->
+  <h1>Você sabe quanto cada setor da sua empresa consome de energia?</h1>
+  <p class="sub">
+    Sua empresa gera milhares de dados todos os dias. O problema é que ninguém está olhando para eles.<br>
+    A ProtoNest transforma máquinas, painéis elétricos e processos industriais em informações que reduzem desperdícios, aumentam a produtividade e evitam paradas inesperadas.
+  </p>
+
+  <!-- BLOCO PRINCIPAL COM LISTA -->
+  <div class="bloco-principal">
+    <div class="texto">
+      <div class="lista-destaque">
+        <ul>
+          <li>Consumo de energia por máquina ou setor</li>
+          <li>Monitoramento de máquinas em tempo real</li>
+          <li>Alertas antes de falhas e paradas</li>
+          <li>Histórico completo de produção</li>
+          <li>Dashboard acessível pelo celular ou computador</li>
+          <li>Monitoramento de temperatura, vibração e ambiente</li>
+          <li>Integração via MQTT, Modbus e ESP32</li>
+          <li>Desenvolvimento sob medida para sua indústria</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ilustra">
+      <img src="servicos.jpg" alt="Dashboard industrial" style="width:100%; max-width:340px;">
+    </div>
+  </div>
+
+  <!-- ===== CARDS ===== -->
+  <div class="cards-grid">
+    <div class="card">
+      <span class="emoji">⚡</span>
+      <h3>Energia</h3>
+      <p>Você sabe quanto custa produzir uma peça? Monitore o consumo por máquina, setor ou processo produtivo.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">🔧</span>
+      <h3>Manutenção</h3>
+      <p>Sua máquina avisa quando vai quebrar… ou quebra primeiro? Receba alertas antes que pequenas falhas parem sua produção.</p>
+    </div>
+    <div class="card">
+      <span class="emoji">📊</span>
+      <h3>Produção</h3>
+      <p>Quanto custa uma hora de máquina parada? Acompanhe produtividade, tempos de parada e indicadores em tempo real.</p>
+    </div>
+  </div>
+
+  <!-- ===== O QUE A PROTONEST FAZ ===== -->
+  <div class="secao-tags">
+    <h2>O que a ProtoNest faz?</h2>
+    <div class="tags">
+      <span>IoT Industrial</span>
+      <span>Monitoramento de Energia</span>
+      <span>Dashboards Inteligentes</span>
+      <span>Sensores Inteligentes</span>
+      <span>Aquisição de Dados</span>
+      <span>Automação Industrial</span>
+      <span>Retrofit</span>
+      <span>Agricultura Inteligente</span>
+    </div>
+  </div>
+
+  <!-- ===== COMO FUNCIONA ===== -->
+  <h2 style="font-size:30px; margin: 40px 0 10px; text-align:center;">Como funciona?</h2>
+  <div class="passos">
+    <div class="passo"><p>Instalamos os sensores</p><span class="sub-pass">em máquinas, painéis e processos</span></div>
+    <div class="passo"><p>Os dados são enviados automaticamente</p><span class="sub-pass">via rede sem fio ou cabeada</span></div>
+    <div class="passo"><p>A plataforma gera gráficos e indicadores</p><span class="sub-pass">em dashboards claros e intuitivos</span></div>
+    <div class="passo"><p>Você toma decisões com informação em tempo real</p><span class="sub-pass">reduz custos e aumenta a eficiência</span></div>
+  </div>
+
+  <!-- ===== APLICAÇÕES ===== -->
+  <div class="aplicacoes">
+    <span>Metalúrgicas</span>
+    <span>Indústrias</span>
+    <span>Frigoríficos</span>
+    <span>Armazéns</span>
+    <span>Cooperativas</span>
+    <span>Agroindústrias</span>
+    <span>Painéis Elétricos</span>
+    <span>Máquinas Agrícolas</span>
+  </div>
+
+  <!-- ===== CTA GIGANTE ===== -->
+  <div class="cta-gigante">
+    <h2>Descubra quanto sua empresa pode economizar.</h2>
+    <p>Solicite uma demonstração.</p>
+    <a href="https://wa.me/5555996294266" class="btn-whats">📲 Fale com um especialista</a>
+  </div>
+
+  <!-- SLOGAN RODAPÉ -->
+  <div class="slogan-footer">
+    <strong>Transformamos dados industriais em decisões inteligentes.</strong><br>
+    <span style="font-size:16px; font-weight:400; color:#8b949e;">Sua produção gera dados. Nós transformamos esses dados em resultado.</span>
+  </div>
+
+</div>
+
+<!-- WHATSAPP FIXO -->
+<a class="whats-fixo" href="https://wa.me/5555996294266">
+  💬 WhatsApp
+</a>
+
+</body>
+</html>
