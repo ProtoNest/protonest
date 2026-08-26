@@ -36,7 +36,7 @@ const campos = [
 
 // Fluxo completo com a saudação personalizada do personagem Proton
 const perguntas = {
-  saudacao: "Oi! Eu sou o Proton, o assistente virtual da ProtoNest, e vou te fazer algumas perguntas rápidas para nos ajudar no contato.",
+  saudacao: "Oi! Eu sou o Próton, o assistente virtual da ProtoNest, e vou te fazer algumas perguntas rápidas para nos ajudar no contato.",
   nome: "Para começar, qual é o seu nome?",
   empresa: "Qual o nome da empresa?",
   whatsapp: "Qual seu WhatsApp (com DDD)?",
